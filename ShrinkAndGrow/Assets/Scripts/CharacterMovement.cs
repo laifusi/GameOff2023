@@ -8,12 +8,15 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] float jumpForce = 100;
     [SerializeField] float walkVelocity = 10;
     [SerializeField] Camera cam;
+    [SerializeField] Transform feet;
+    [SerializeField] LayerMask layerMask;
 
     private Rigidbody2D rb;
     private float horizontal;
     private bool mustJump;
     private CharacterInventory inventory;
     private Animator animator;
+    private bool isGrounded;
 
     private void Start()
     {
@@ -30,6 +33,7 @@ public class CharacterMovement : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             mustJump = true;
+            animator.SetTrigger("Jump");
         }
 
         if(Input.GetKeyDown(KeyCode.P) && inventory.HasPotion())
@@ -43,6 +47,11 @@ public class CharacterMovement : MonoBehaviour
             Grow();
             inventory.EatOrange();
         }
+
+        var hit = Physics2D.OverlapCircle(feet.position, 0.1f, layerMask);
+        isGrounded = hit != null;
+
+        animator.SetBool("grounded", isGrounded);
     }
 
     private void Shrink()
