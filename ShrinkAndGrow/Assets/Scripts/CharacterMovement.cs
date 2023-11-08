@@ -47,33 +47,55 @@ public class CharacterMovement : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.P) && inventory.HasPotion())
         {
-            Shrink();
+            StartCoroutine(Shrink());
             inventory.DrinkPotion();
         }
 
         if(Input.GetKeyDown(KeyCode.O) && inventory.HasOrange())
         {
-            Grow();
+            StartCoroutine(Grow());
             inventory.EatOrange();
         }
     }
 
-    private void Shrink()
+    private IEnumerator Shrink()
     {
-        transform.localScale = transform.localScale / 2;
-        jumpForce /= 2;
-        walkVelocity /= 2;
-        rb.gravityScale /= 2;
-        cam.orthographicSize /= 2;
+        var currentScale = transform.localScale;
+        var currentJumpForce = jumpForce;
+        var currentWalkVelocity = walkVelocity;
+        var currentGravityScale = rb.gravityScale;
+        var currentCamSize = cam.orthographicSize;
+        float iterator = 0;
+        while (iterator < 2)
+        {
+            iterator += 0.1f;
+            transform.localScale = new Vector3(Mathf.Lerp(currentScale.x, currentScale.x / 2, iterator), Mathf.Lerp(currentScale.y, currentScale.y / 2, iterator), 1);
+            jumpForce = Mathf.Lerp(currentJumpForce, currentJumpForce / 2, iterator);
+            walkVelocity = Mathf.Lerp(currentWalkVelocity, currentWalkVelocity / 2, iterator);
+            rb.gravityScale = Mathf.Lerp(currentGravityScale, currentGravityScale / 2, iterator);
+            cam.orthographicSize = Mathf.Lerp(currentCamSize, currentCamSize / 2, iterator);
+            yield return new WaitForEndOfFrame();
+        }
     }
 
-    private void Grow()
+    private IEnumerator Grow()
     {
-        transform.localScale = transform.localScale * 2;
-        jumpForce *= 2;
-        walkVelocity *= 2;
-        rb.gravityScale *= 2;
-        cam.orthographicSize *= 2;
+        var currentScale = transform.localScale;
+        var currentJumpForce = jumpForce;
+        var currentWalkVelocity = walkVelocity;
+        var currentGravityScale = rb.gravityScale;
+        var currentCamSize = cam.orthographicSize;
+        float iterator = 0;
+        while(iterator < 2)
+        {
+            iterator += 0.1f;
+            transform.localScale = new Vector3(Mathf.Lerp(currentScale.x, currentScale.x*2, iterator), Mathf.Lerp(currentScale.y, currentScale.y * 2, iterator), 1);
+            jumpForce = Mathf.Lerp(currentJumpForce, currentJumpForce*2, iterator);
+            walkVelocity = Mathf.Lerp(currentWalkVelocity, currentWalkVelocity * 2, iterator);
+            rb.gravityScale = Mathf.Lerp(currentGravityScale, currentGravityScale * 2, iterator);
+            cam.orthographicSize = Mathf.Lerp(currentCamSize, currentCamSize * 2, iterator);
+            yield return new WaitForEndOfFrame();
+        }
     }
 
     private void FixedUpdate()
