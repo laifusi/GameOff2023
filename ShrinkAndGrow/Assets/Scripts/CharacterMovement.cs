@@ -13,9 +13,11 @@ public class CharacterMovement : MonoBehaviour
     private float horizontal;
     private bool mustJump;
     private CharacterInventory inventory;
+    private Animator animator;
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         inventory = GetComponent<CharacterInventory>();
     }
@@ -23,6 +25,7 @@ public class CharacterMovement : MonoBehaviour
     private void Update()
     {
         horizontal = Input.GetAxis("Horizontal");
+        animator.SetBool("isWalking", horizontal != 0);
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
