@@ -17,20 +17,29 @@ public class CharacterMovement : MonoBehaviour
     private CharacterInventory inventory;
     private Animator animator;
     private bool isGrounded;
+    private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         inventory = GetComponent<CharacterInventory>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
+        var hit = Physics2D.OverlapCircle(feet.position, 0.1f, layerMask);
+        isGrounded = hit != null;
+        animator.SetBool("grounded", isGrounded);
+
         horizontal = Input.GetAxis("Horizontal");
         animator.SetBool("isWalking", horizontal != 0);
+        if(horizontal != 0)
+            spriteRenderer.flipX = horizontal < 0;
 
-        if(Input.GetKeyDown(KeyCode.Space))
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             mustJump = true;
             animator.SetTrigger("Jump");
@@ -47,11 +56,6 @@ public class CharacterMovement : MonoBehaviour
             Grow();
             inventory.EatOrange();
         }
-
-        var hit = Physics2D.OverlapCircle(feet.position, 0.1f, layerMask);
-        isGrounded = hit != null;
-
-        animator.SetBool("grounded", isGrounded);
     }
 
     private void Shrink()
