@@ -10,6 +10,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] Camera cam;
     [SerializeField] Transform feet;
     [SerializeField] LayerMask layerMask;
+    [SerializeField] float secondsToWait;
 
     private Rigidbody2D rb;
     private float horizontal;
@@ -74,7 +75,7 @@ public class CharacterMovement : MonoBehaviour
             walkVelocity = Mathf.Lerp(currentWalkVelocity, currentWalkVelocity / 2, iterator);
             rb.gravityScale = Mathf.Lerp(currentGravityScale, currentGravityScale / 2, iterator);
             cam.orthographicSize = Mathf.Lerp(currentCamSize, currentCamSize / 2, iterator);
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(secondsToWait);
         }
     }
 
@@ -94,7 +95,7 @@ public class CharacterMovement : MonoBehaviour
             walkVelocity = Mathf.Lerp(currentWalkVelocity, currentWalkVelocity * 2, iterator);
             rb.gravityScale = Mathf.Lerp(currentGravityScale, currentGravityScale * 2, iterator);
             cam.orthographicSize = Mathf.Lerp(currentCamSize, currentCamSize * 2, iterator);
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(secondsToWait);
         }
     }
 

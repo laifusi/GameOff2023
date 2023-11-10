@@ -6458,6 +6458,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 2.64
       objectReference: {fileID: 0}
+    - target: {fileID: 660337386770067139, guid: a29fc1c8ae9482a43a0740c3ccf919cc, type: 3}
+      propertyPath: secondsToWait
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 660337386770067140, guid: a29fc1c8ae9482a43a0740c3ccf919cc, type: 3}
       propertyPath: m_RootOrder
       value: 3
