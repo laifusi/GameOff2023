@@ -295,6 +295,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &256810756 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 660337386192188944, guid: a29fc1c8ae9482a43a0740c3ccf919cc, type: 3}
+  m_PrefabInstance: {fileID: 660337386480242287}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &540569582 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 656801763370618936, guid: d3958d75992ce4847aaf0418cfb40c7f, type: 3}
@@ -1023,6 +1028,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1549706375}
   - component: {fileID: 1549706376}
+  - component: {fileID: 1549706377}
   m_Layer: 0
   m_Name: ThirdLayer
   m_TagString: Untagged
@@ -1097,6 +1103,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1549706377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549706374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38cd03e992c82be43a672c9dc9457f19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxValue: 0.8
+  cam: {fileID: 256810756}
 --- !u!1 &1574534629
 GameObject:
   m_ObjectHideFlags: 0
@@ -6032,6 +6052,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1910303994}
   - component: {fileID: 1910303995}
+  - component: {fileID: 1910303996}
   m_Layer: 0
   m_Name: SecondLayer
   m_TagString: Untagged
@@ -6106,6 +6127,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1910303996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910303993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38cd03e992c82be43a672c9dc9457f19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxValue: 0.5
+  cam: {fileID: 256810756}
 --- !u!1 &1929912132
 GameObject:
   m_ObjectHideFlags: 0
@@ -6227,6 +6262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1943537035}
   - component: {fileID: 1943537036}
+  - component: {fileID: 1943537037}
   m_Layer: 0
   m_Name: FirstLayer
   m_TagString: Untagged
@@ -6301,6 +6337,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1943537037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943537034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38cd03e992c82be43a672c9dc9457f19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxValue: 0.3
+  cam: {fileID: 256810756}
 --- !u!1001 &2000858206
 PrefabInstance:
   m_ObjectHideFlags: 0
