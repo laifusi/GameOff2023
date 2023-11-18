@@ -7,6 +7,7 @@ public class CharacterInventory : MonoBehaviour
     private int potions;
     private int oranges;
     private int keys;
+    private List<Door> openableDoors = new List<Door>();
 
     public void AddPotion()
     {
@@ -38,13 +39,13 @@ public class CharacterInventory : MonoBehaviour
         return oranges > 0;
     }
 
-    public void AddKey()
+    public void AddKey(Door associatedDoor)
     {
-        keys++;
+        openableDoors.Add(associatedDoor);
     }
 
-    public bool HasKey()
+    public bool HasKey(Door doorToOpen)
     {
-        return keys > 0;
+        return openableDoors.Contains(doorToOpen);
     }
 }

@@ -182,6 +182,79 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: a766eb8f3f80a8e42b0056eda92f1f89, type: 3}
+--- !u!1 &46243930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 46243931}
+  - component: {fileID: 46243933}
+  - component: {fileID: 46243932}
+  m_Layer: 0
+  m_Name: Door_C
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &46243931
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46243930}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1642155593}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &46243932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46243930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28fe0248bde49f84d8fdbcd12c94b059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  houseScene: House_A
+  needsKey: 1
+--- !u!61 &46243933
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46243930}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.52455807, y: -6.2969313}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.276102, y: 10.2650585}
+  m_EdgeRadius: 0
 --- !u!1 &49653974
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,6 +767,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8334956119239913017, guid: 5ffacb5729531634c9412cc3e0fec6f4, type: 3}
+      propertyPath: associatedDoor
+      value: 
+      objectReference: {fileID: 1501929532}
     - target: {fileID: 8334956119239913018, guid: 5ffacb5729531634c9412cc3e0fec6f4, type: 3}
       propertyPath: m_Name
       value: Key_A
@@ -2012,7 +2089,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2532209521114960867, guid: 8eebca9981c71ad49a3c066d8f159c92, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1501929531}
   m_SourcePrefab: {fileID: 100100000, guid: 8eebca9981c71ad49a3c066d8f159c92, type: 3}
 --- !u!1001 &647944063
 PrefabInstance:
@@ -4107,7 +4187,10 @@ PrefabInstance:
       value: House
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2532209521114960867, guid: 8eebca9981c71ad49a3c066d8f159c92, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1742143305}
   m_SourcePrefab: {fileID: 100100000, guid: 8eebca9981c71ad49a3c066d8f159c92, type: 3}
 --- !u!4 &1252563072 stripped
 Transform:
@@ -4624,6 +4707,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8334956119239913017, guid: 5ffacb5729531634c9412cc3e0fec6f4, type: 3}
+      propertyPath: associatedDoor
+      value: 
+      objectReference: {fileID: 1742143306}
     - target: {fileID: 8334956119239913018, guid: 5ffacb5729531634c9412cc3e0fec6f4, type: 3}
       propertyPath: m_Name
       value: Key_B
@@ -5118,6 +5205,79 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 8eebca9981c71ad49a3c066d8f159c92, type: 3}
+--- !u!1 &1501929530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1501929531}
+  - component: {fileID: 1501929533}
+  - component: {fileID: 1501929532}
+  m_Layer: 0
+  m_Name: Door_A
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1501929531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501929530}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.35363954}
+  m_LocalScale: {x: 0.50000006, y: 0.50000006, z: 0.50000006}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 278068096}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1501929532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501929530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28fe0248bde49f84d8fdbcd12c94b059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  houseScene: 
+  needsKey: 1
+--- !u!61 &1501929533
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501929530}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.99190664, y: -12.372618}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 19.31174, y: 20.546997}
+  m_EdgeRadius: 0
 --- !u!1001 &1502985343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6260,7 +6420,10 @@ PrefabInstance:
       value: House
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2532209521114960867, guid: 8eebca9981c71ad49a3c066d8f159c92, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 46243931}
   m_SourcePrefab: {fileID: 100100000, guid: 8eebca9981c71ad49a3c066d8f159c92, type: 3}
 --- !u!4 &1642155593 stripped
 Transform:
@@ -6739,6 +6902,79 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2532209521114960867, guid: 8eebca9981c71ad49a3c066d8f159c92, type: 3}
   m_PrefabInstance: {fileID: 1738467202}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1742143304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1742143305}
+  - component: {fileID: 1742143307}
+  - component: {fileID: 1742143306}
+  m_Layer: 0
+  m_Name: Door_B
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1742143305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742143304}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1252563072}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1742143306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742143304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28fe0248bde49f84d8fdbcd12c94b059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  houseScene: 
+  needsKey: 1
+--- !u!61 &1742143307
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742143304}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.5648577, y: -7.449116}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 9.961407, y: 12.22663}
+  m_EdgeRadius: 0
 --- !u!1 &1745792161
 GameObject:
   m_ObjectHideFlags: 0
@@ -8229,6 +8465,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8334956119239913017, guid: 5ffacb5729531634c9412cc3e0fec6f4, type: 3}
+      propertyPath: associatedDoor
+      value: 
+      objectReference: {fileID: 46243932}
     - target: {fileID: 8334956119239913018, guid: 5ffacb5729531634c9412cc3e0fec6f4, type: 3}
       propertyPath: m_Name
       value: Key_C
