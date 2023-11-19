@@ -19,6 +19,7 @@ public class CharacterMovement : MonoBehaviour
     private Animator animator;
     private bool isGrounded;
     private SpriteRenderer spriteRenderer;
+    private int growthValue;
 
     private void Start()
     {
@@ -26,6 +27,12 @@ public class CharacterMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         inventory = GetComponent<CharacterInventory>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        growthValue = PlayerPrefs.GetInt("GrowthValue", 0);
+
+        if (growthValue < 0)
+            Shrink();
+        else if (growthValue > 0)
+            Grow();
     }
 
     private void Update()
@@ -59,8 +66,11 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
+    [ContextMenu("Shrink")]
     private IEnumerator Shrink()
     {
+        growthValue -= 1;
+
         var currentScale = transform.localScale;
         var currentJumpForce = jumpForce;
         var currentWalkVelocity = walkVelocity;
@@ -79,8 +89,11 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
+    [ContextMenu("Grow")]
     private IEnumerator Grow()
     {
+        growthValue += 1;
+
         var currentScale = transform.localScale;
         var currentJumpForce = jumpForce;
         var currentWalkVelocity = walkVelocity;
@@ -108,5 +121,10 @@ public class CharacterMovement : MonoBehaviour
             rb.AddForce(new Vector2(0, jumpForce));
             mustJump = false;
         }
+    }
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetInt("GrowthValue", growthValue);
     }
 }
