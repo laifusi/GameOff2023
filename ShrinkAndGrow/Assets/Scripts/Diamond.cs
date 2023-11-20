@@ -2,15 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Diamond : MonoBehaviour
+public class Diamond : Collectible
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void PickUp(CharacterInventory inventory)
     {
-        CharacterInventory invetory = collision.GetComponent<CharacterInventory>();
-        if (invetory != null)
-        {
-            Debug.Log("YOU WIN!");
-            Destroy(gameObject);
-        }
+        Debug.Log("YOU WIN!");
     }
 }

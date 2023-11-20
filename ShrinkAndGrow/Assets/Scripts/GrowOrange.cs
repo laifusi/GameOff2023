@@ -2,15 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrowOrange : MonoBehaviour
+public class GrowOrange : Collectible
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void PickUp(CharacterInventory inventory)
     {
-        CharacterInventory invetory = collision.GetComponent<CharacterInventory>();
-        if (invetory != null)
-        {
-            invetory.AddOrange();
-            Destroy(gameObject);
-        }
+        inventory.AddOrange();
     }
 }

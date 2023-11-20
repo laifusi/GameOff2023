@@ -7,6 +7,7 @@ public class Door : MonoBehaviour
 {
     [SerializeField] string houseScene;
     [SerializeField] bool needsKey = true;
+    [SerializeField] KeyType keyType;
 
     private bool activeDoor;
 
@@ -15,7 +16,7 @@ public class Door : MonoBehaviour
         if(needsKey)
         {
             CharacterInventory invetory = collider.GetComponent<CharacterInventory>();
-            if (invetory != null && invetory.HasKey(this))
+            if (invetory != null && invetory.HasKey(keyType))
             {
                 activeDoor = true;
             }

@@ -21,18 +21,22 @@ public class CharacterMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private int growthValue;
 
-    private void Start()
+    private IEnumerator Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         inventory = GetComponent<CharacterInventory>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        yield return null;
+
         growthValue = PlayerPrefs.GetInt("GrowthValue", 0);
+        Debug.Log(growthValue);
 
         if (growthValue < 0)
-            Shrink();
+            StartCoroutine(Shrink());
         else if (growthValue > 0)
-            Grow();
+            StartCoroutine(Grow());
     }
 
     private void Update()
@@ -66,10 +70,11 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    [ContextMenu("Shrink")]
     private IEnumerator Shrink()
     {
         growthValue -= 1;
+        if (growthValue < -1)
+            growthValue = -1;
 
         var currentScale = transform.localScale;
         var currentJumpForce = jumpForce;
@@ -89,10 +94,11 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    [ContextMenu("Grow")]
     private IEnumerator Grow()
     {
         growthValue += 1;
+        if (growthValue > 1)
+            growthValue = 1;
 
         var currentScale = transform.localScale;
         var currentJumpForce = jumpForce;
@@ -123,7 +129,7 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         PlayerPrefs.SetInt("GrowthValue", growthValue);
     }

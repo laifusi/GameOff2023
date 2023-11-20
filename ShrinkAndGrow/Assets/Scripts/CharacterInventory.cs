@@ -4,10 +4,33 @@ using UnityEngine;
 
 public class CharacterInventory : MonoBehaviour
 {
-    private int potions;
-    private int oranges;
-    private int keys;
-    private List<Door> openableDoors = new List<Door>();
+    public static CharacterInventory Instance;
+
+    private static int potions;
+    private static int oranges;
+    private static List<KeyType> keys = new List<KeyType>();
+    private static bool diamond;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
+    private void Start()
+    {
+        Debug.Log("potions: " + potions);
+        Debug.Log("oranges: " + oranges);
+        Debug.Log("Keys: " + keys.Count);
+        foreach (KeyType k in keys)
+            Debug.Log("       " + k);
+    }
 
     public void AddPotion()
     {
@@ -39,13 +62,23 @@ public class CharacterInventory : MonoBehaviour
         return oranges > 0;
     }
 
-    public void AddKey(Door associatedDoor)
+    public void AddKey(KeyType keyType)
     {
-        openableDoors.Add(associatedDoor);
+        keys.Add(keyType);
     }
 
-    public bool HasKey(Door doorToOpen)
+    public bool HasKey(KeyType type)
     {
-        return openableDoors.Contains(doorToOpen);
+        return keys.Contains(type);
     }
+
+    public void AddDiamond()
+    {
+        diamond = true;
+    }
+}
+
+public enum KeyType
+{
+    A, B, C
 }

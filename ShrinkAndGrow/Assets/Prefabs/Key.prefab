@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae2bae35f302ba4c8f0174e6f1debc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  glow: {fileID: 8334956120411370780}
+  associatedDoor: {fileID: 0}
 --- !u!70 &8334956119239913022
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

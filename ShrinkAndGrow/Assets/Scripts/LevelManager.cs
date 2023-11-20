@@ -20,9 +20,13 @@ public class LevelManager : MonoBehaviour
             if(entryPoint.GetPreviousScene() == previousLevel)
             {
                 character.position = entryPoint.GetEntryPoint();
-                break;
+                return;
             }
         }
+
+        // If no entry point, we are testing through the editor, should be a new game
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("GrowthValue", -1);
     }
 
     private void ActivateSceneFadeOut()

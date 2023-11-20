@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShrinkPotion : MonoBehaviour
+public class ShrinkPotion : Collectible
 {
     private Animator animator;
     private int drippingRand;
 
-    private void Start()
+    protected new void Start()
     {
+        StartCoroutine(base.Start());
+
         animator = GetComponent<Animator>();
 
         //Every 2 seconds we check if we should play the dripping animation
@@ -22,13 +24,8 @@ public class ShrinkPotion : MonoBehaviour
             animator.SetTrigger("Drip");
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void PickUp(CharacterInventory inventory)
     {
-        CharacterInventory invetory = collision.GetComponent<CharacterInventory>();
-        if(invetory != null)
-        {
-            invetory.AddPotion();
-            Destroy(gameObject);
-        }
+        inventory.AddPotion();
     }
 }

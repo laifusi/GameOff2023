@@ -5019,6 +5019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea2916064d41f8498ec3b2953fea2a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  glow: {fileID: 1407371419}
 --- !u!70 &656801763370618938
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

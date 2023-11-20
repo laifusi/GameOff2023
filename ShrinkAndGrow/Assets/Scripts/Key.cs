@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Key : MonoBehaviour
+public class Key : Collectible
 {
-    [SerializeField] Door associatedDoor;
+    [SerializeField] KeyType keyType;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void PickUp(CharacterInventory inventory)
     {
-        CharacterInventory invetory = collision.GetComponent<CharacterInventory>();
-        if (invetory != null)
-        {
-            invetory.AddKey(associatedDoor);
-            Destroy(gameObject);
-        }
+        inventory.AddKey(keyType);
     }
 }
