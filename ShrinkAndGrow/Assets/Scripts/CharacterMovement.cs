@@ -31,7 +31,6 @@ public class CharacterMovement : MonoBehaviour
         yield return null;
 
         growthValue = PlayerPrefs.GetInt("GrowthValue", 0);
-        Debug.Log(growthValue);
 
         if (growthValue < 0)
             StartCoroutine(Shrink());

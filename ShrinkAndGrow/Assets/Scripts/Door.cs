@@ -27,11 +27,11 @@ public class Door : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void Update()
     {
-        if(activeDoor && Input.GetKeyDown(KeyCode.E))
+        if (activeDoor && Input.GetKeyDown(KeyCode.E))
         {
-            if(needsKey)
+            if (needsKey)
             {
                 MenuManager.Instance.LoadSceneByName(houseScene);
             }
@@ -39,6 +39,7 @@ public class Door : MonoBehaviour
             {
                 MenuManager.Instance.LoadSceneByName("Level1");
             }
+            activeDoor = false;
         }
     }
 

@@ -15,15 +15,18 @@ public class LevelManager : MonoBehaviour
         MenuManager.OnSceneFadeOut += ActivateSceneFadeOut;
 
         string previousLevel = PlayerPrefs.GetString("PreviousScene");
+        Debug.Log(previousLevel);
         foreach(LevelEntryPoint entryPoint in levelEntryPoints)
         {
             if(entryPoint.GetPreviousScene() == previousLevel)
             {
+                Debug.Log("Found entry point");
                 character.position = entryPoint.GetEntryPoint();
                 return;
             }
         }
 
+        Debug.Log("no entry point");
         // If no entry point, we are testing through the editor, should be a new game
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt("GrowthValue", -1);

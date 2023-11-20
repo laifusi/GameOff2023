@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 8334956119239913018}
   m_LocalRotation: {x: -0, y: -0, z: -0.7070686, w: 0.707145}
   m_LocalPosition: {x: 54.04, y: -3.43, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8334956120411370781}
   m_Father: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glow: {fileID: 8334956120411370780}
-  associatedDoor: {fileID: 0}
+  keyType: 0
 --- !u!70 &8334956119239913022
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

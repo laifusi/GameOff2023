@@ -23,15 +23,6 @@ public class CharacterInventory : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        Debug.Log("potions: " + potions);
-        Debug.Log("oranges: " + oranges);
-        Debug.Log("Keys: " + keys.Count);
-        foreach (KeyType k in keys)
-            Debug.Log("       " + k);
-    }
-
     public void AddPotion()
     {
         potions++;
