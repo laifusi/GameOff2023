@@ -6,6 +6,6 @@ public class Diamond : Collectible
 {
     protected override void PickUp(CharacterInventory inventory)
     {
-        Debug.Log("YOU WIN!");
+        inventory.AddDiamond();
     }
 }
