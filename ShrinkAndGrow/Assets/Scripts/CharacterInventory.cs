@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,11 @@ public class CharacterInventory : MonoBehaviour
     private static List<KeyType> keys = new List<KeyType>();
     private static bool diamond;
 
+    public static Action<int> OnPotionsUpdated;
+    public static Action<int> OnOrangesUpdated;
+    public static Action<KeyType> OnKeysUpdated;
+    public static Action OnDiamondUpdated;
+
     private void Awake()
     {
         if (Instance == null)
@@ -23,14 +29,36 @@ public class CharacterInventory : MonoBehaviour
         }
     }
 
+    private IEnumerator Start()
+    {
+        yield return null;
+        InitializeUI();
+    }
+
+    private static void InitializeUI()
+    {
+        OnPotionsUpdated?.Invoke(potions);
+        OnOrangesUpdated?.Invoke(oranges);
+        foreach (KeyType key in keys)
+        {
+            OnKeysUpdated?.Invoke(key);
+        }
+        if (diamond)
+        {
+            OnDiamondUpdated?.Invoke();
+        }
+    }
+
     public void AddPotion()
     {
         potions++;
+        OnPotionsUpdated?.Invoke(potions);
     }
 
     public void DrinkPotion()
     {
         potions--;
+        OnPotionsUpdated?.Invoke(potions);
     }
 
     public bool HasPotion()
@@ -41,11 +69,13 @@ public class CharacterInventory : MonoBehaviour
     public void AddOrange()
     {
         oranges++;
+        OnOrangesUpdated?.Invoke(oranges);
     }
 
     public void EatOrange()
     {
         oranges--;
+        OnOrangesUpdated?.Invoke(oranges);
     }
 
     public bool HasOrange()
@@ -56,6 +86,7 @@ public class CharacterInventory : MonoBehaviour
     public void AddKey(KeyType keyType)
     {
         keys.Add(keyType);
+        OnKeysUpdated?.Invoke(keyType);
     }
 
     public bool HasKey(KeyType type)
@@ -66,6 +97,12 @@ public class CharacterInventory : MonoBehaviour
     public void AddDiamond()
     {
         diamond = true;
+        OnDiamondUpdated?.Invoke();
+    }
+
+    public bool HasDiamond()
+    {
+        return diamond;
     }
 }
 
