@@ -8,6 +8,7 @@ public class Door : MonoBehaviour
     [SerializeField] string houseScene;
     [SerializeField] bool needsKey = true;
     [SerializeField] KeyType keyType;
+    [SerializeField] GameObject doorCanvas;
 
     private bool activeDoor;
 
@@ -19,11 +20,13 @@ public class Door : MonoBehaviour
             if (invetory != null && invetory.HasKey(keyType))
             {
                 activeDoor = true;
+                doorCanvas.SetActive(true);
             }
         }
         else
         {
             activeDoor = true;
+            doorCanvas.SetActive(true);
         }
     }
 
@@ -46,5 +49,6 @@ public class Door : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         activeDoor = false;
+        doorCanvas.SetActive(false);
     }
 }
