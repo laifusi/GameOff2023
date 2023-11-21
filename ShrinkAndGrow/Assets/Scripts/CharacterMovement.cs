@@ -12,13 +12,21 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] LayerMask layerMask;
     [SerializeField] float secondsToWait;
 
-    private Rigidbody2D rb;
     private float horizontal;
     private bool mustJump;
+    private bool isGrounded;
+
+    private Rigidbody2D rb;
     private CharacterInventory inventory;
     private Animator animator;
-    private bool isGrounded;
     private SpriteRenderer spriteRenderer;
+
+    private Vector3 currentScale;
+    private float currentJumpForce;
+    private float currentWalkVelocity;
+    private float currentGravityScale;
+    private float currentCamSize;
+
     private int growthValue;
 
     private IEnumerator Start()
@@ -32,10 +40,8 @@ public class CharacterMovement : MonoBehaviour
 
         growthValue = PlayerPrefs.GetInt("GrowthValue", 0);
 
-        if (growthValue < 0)
-            StartCoroutine(Shrink());
-        else if (growthValue > 0)
-            StartCoroutine(Grow());
+        ChangeInitialScale(growthValue);
+        SaveCurrentScaleValues();
     }
 
     private void Update()
@@ -75,11 +81,6 @@ public class CharacterMovement : MonoBehaviour
         if (growthValue < -1)
             growthValue = -1;
 
-        var currentScale = transform.localScale;
-        var currentJumpForce = jumpForce;
-        var currentWalkVelocity = walkVelocity;
-        var currentGravityScale = rb.gravityScale;
-        var currentCamSize = cam.orthographicSize;
         float iterator = 0;
         while (iterator < 2)
         {
@@ -91,6 +92,8 @@ public class CharacterMovement : MonoBehaviour
             cam.orthographicSize = Mathf.Lerp(currentCamSize, currentCamSize / 2, iterator);
             yield return new WaitForSeconds(secondsToWait);
         }
+
+        SaveCurrentScaleValues();
     }
 
     private IEnumerator Grow()
@@ -99,11 +102,6 @@ public class CharacterMovement : MonoBehaviour
         if (growthValue > 1)
             growthValue = 1;
 
-        var currentScale = transform.localScale;
-        var currentJumpForce = jumpForce;
-        var currentWalkVelocity = walkVelocity;
-        var currentGravityScale = rb.gravityScale;
-        var currentCamSize = cam.orthographicSize;
         float iterator = 0;
         while(iterator < 2)
         {
@@ -115,6 +113,40 @@ public class CharacterMovement : MonoBehaviour
             cam.orthographicSize = Mathf.Lerp(currentCamSize, currentCamSize * 2, iterator);
             yield return new WaitForSeconds(secondsToWait);
         }
+
+        SaveCurrentScaleValues();
+    }
+
+    private void ChangeInitialScale(int growthValue)
+    {
+        if (growthValue >= 1)
+        {
+            growthValue = 1;
+            transform.localScale *= 2;
+            jumpForce *= 2;
+            walkVelocity *= 2;
+            rb.gravityScale *= 2;
+            cam.orthographicSize *= 2;
+        }
+        else if (growthValue <= -1)
+        {
+            growthValue = -1;
+
+            transform.localScale /= 2;
+            jumpForce /= 2;
+            walkVelocity /= 2;
+            rb.gravityScale /= 2;
+            cam.orthographicSize /= 2;
+        }
+    }
+
+    private void SaveCurrentScaleValues()
+    {
+        currentScale = transform.localScale;
+        currentJumpForce = jumpForce;
+        currentWalkVelocity = walkVelocity;
+        currentGravityScale = rb.gravityScale;
+        currentCamSize = cam.orthographicSize;
     }
 
     private void FixedUpdate()
