@@ -8,47 +8,63 @@ public class Door : MonoBehaviour
     [SerializeField] string houseScene;
     [SerializeField] bool needsKey = true;
     [SerializeField] KeyType keyType;
-    [SerializeField] GameObject doorCanvas;
+    [SerializeField] GameObject enterDoorUI;
+    [SerializeField] GameObject cantEnterDoorUI;
+    [SerializeField] int maxGrowthToEnter = 1;
 
     private bool activeDoor;
+    private CharacterMovement character;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if(needsKey)
         {
-            CharacterInventory invetory = collider.GetComponent<CharacterInventory>();
-            if (invetory != null && invetory.HasKey(keyType))
+            CharacterInventory inventory = collider.GetComponent<CharacterInventory>();
+            if (inventory != null && inventory.HasKey(keyType))
             {
+                character = inventory.GetComponent<CharacterMovement>();
                 activeDoor = true;
-                doorCanvas.SetActive(true);
+                enterDoorUI.SetActive(true);
             }
         }
         else
         {
+            character = collider.GetComponent<CharacterMovement>();
             activeDoor = true;
-            doorCanvas.SetActive(true);
+            enterDoorUI.SetActive(true);
         }
     }
 
     private void Update()
     {
+        if(cantEnterDoorUI != null && !activeDoor)
+            cantEnterDoorUI.SetActive(false);
+
         if (activeDoor && Input.GetKeyDown(KeyCode.E))
         {
-            if (needsKey)
+            if(character.GetCurrentGrowthLevel() <= maxGrowthToEnter)
             {
-                MenuManager.Instance.LoadSceneByName(houseScene);
+                if (needsKey)
+                {
+                    MenuManager.Instance.LoadSceneByName(houseScene);
+                }
+                else
+                {
+                    MenuManager.Instance.LoadSceneByName("Level1");
+                }
+                activeDoor = false;
             }
             else
             {
-                MenuManager.Instance.LoadSceneByName("Level1");
+                if (cantEnterDoorUI != null)
+                    cantEnterDoorUI.SetActive(true);
             }
-            activeDoor = false;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         activeDoor = false;
-        doorCanvas.SetActive(false);
+        enterDoorUI.SetActive(false);
     }
 }

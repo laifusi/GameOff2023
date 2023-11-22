@@ -165,6 +165,11 @@ public class CharacterMovement : MonoBehaviour
         currentMaxGrowth = max;
     }
 
+    public int GetCurrentGrowthLevel()
+    {
+        return growthValue;
+    }
+
     private void OnDisable()
     {
         PlayerPrefs.SetInt("GrowthValue", growthValue);

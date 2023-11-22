@@ -237,7 +237,9 @@ MonoBehaviour:
   houseScene: House_C
   needsKey: 1
   keyType: 2
-  doorCanvas: {fileID: 859304873}
+  enterDoorUI: {fileID: 1269630161}
+  cantEnterDoorUI: {fileID: 1196378841}
+  maxGrowthToEnter: 0
 --- !u!61 &46243933
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1757,6 +1759,8 @@ MonoBehaviour:
   - entryPoint: {fileID: 1905325171}
     previousScene: House_C
   character: {fileID: 660337386480242288}
+  maxGrowthLevel: 1
+  minGrowthLevel: -1
 --- !u!95 &398933999
 Animator:
   serializedVersion: 4
@@ -3313,11 +3317,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7602652827959263668, guid: 1da2eb162a3c3ed4a8e6ff50118b7712, type: 3}
   m_PrefabInstance: {fileID: 786962500}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &800920052 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3763088888142127793, guid: 214c7863a3c9e934ba9e07915327690a, type: 3}
-  m_PrefabInstance: {fileID: 1149558494}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &819547059
 GameObject:
   m_ObjectHideFlags: 0
@@ -3486,11 +3485,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &859304873 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3763088888142127793, guid: 214c7863a3c9e934ba9e07915327690a, type: 3}
-  m_PrefabInstance: {fileID: 1196378839}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &868455359
 GameObject:
   m_ObjectHideFlags: 0
@@ -4013,6 +4007,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &936109323 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 936109323, guid: 214c7863a3c9e934ba9e07915327690a, type: 3}
+  m_PrefabInstance: {fileID: 3763088887129308554}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &992106974
 GameObject:
   m_ObjectHideFlags: 0
@@ -4655,11 +4654,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1147248443 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3763088888142127793, guid: 214c7863a3c9e934ba9e07915327690a, type: 3}
-  m_PrefabInstance: {fileID: 3763088887129308554}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1147248444 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3763088888142127798, guid: 214c7863a3c9e934ba9e07915327690a, type: 3}
@@ -4679,7 +4673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3763088888142127793, guid: 214c7863a3c9e934ba9e07915327690a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3763088888142127798, guid: 214c7863a3c9e934ba9e07915327690a, type: 3}
       propertyPath: m_Pivot.x
@@ -4771,6 +4765,11 @@ PrefabInstance:
 --- !u!224 &1149558495 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3763088888142127798, guid: 214c7863a3c9e934ba9e07915327690a, type: 3}
+  m_PrefabInstance: {fileID: 1149558494}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1149558496 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 936109323, guid: 214c7863a3c9e934ba9e07915327690a, type: 3}
   m_PrefabInstance: {fileID: 1149558494}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1192969807
@@ -4955,7 +4954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3763088888142127793, guid: 214c7863a3c9e934ba9e07915327690a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3763088888142127798, guid: 214c7863a3c9e934ba9e07915327690a, type: 3}
       propertyPath: m_Pivot.x
@@ -5047,6 +5046,11 @@ PrefabInstance:
 --- !u!224 &1196378840 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3763088888142127798, guid: 214c7863a3c9e934ba9e07915327690a, type: 3}
+  m_PrefabInstance: {fileID: 1196378839}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1196378841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 936109323, guid: 214c7863a3c9e934ba9e07915327690a, type: 3}
   m_PrefabInstance: {fileID: 1196378839}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1202067574
@@ -5299,6 +5303,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2532209521114960867, guid: 8eebca9981c71ad49a3c066d8f159c92, type: 3}
   m_PrefabInstance: {fileID: 1252563071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1269630161 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3763088886717819868, guid: 214c7863a3c9e934ba9e07915327690a, type: 3}
+  m_PrefabInstance: {fileID: 1196378839}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1270398758
 GameObject:
@@ -6201,6 +6210,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1405413705 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3763088886717819868, guid: 214c7863a3c9e934ba9e07915327690a, type: 3}
+  m_PrefabInstance: {fileID: 3763088887129308554}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1416314533
 GameObject:
   m_ObjectHideFlags: 0
@@ -6514,7 +6528,9 @@ MonoBehaviour:
   houseScene: House_A
   needsKey: 1
   keyType: 0
-  doorCanvas: {fileID: 1147248443}
+  enterDoorUI: {fileID: 1405413705}
+  cantEnterDoorUI: {fileID: 936109323}
+  maxGrowthToEnter: 1
 --- !u!61 &1501929533
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7330,6 +7346,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1568861949 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3763088886717819868, guid: 214c7863a3c9e934ba9e07915327690a, type: 3}
+  m_PrefabInstance: {fileID: 1149558494}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1569933198
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8387,7 +8408,9 @@ MonoBehaviour:
   houseScene: House_B
   needsKey: 1
   keyType: 1
-  doorCanvas: {fileID: 800920052}
+  enterDoorUI: {fileID: 1568861949}
+  cantEnterDoorUI: {fileID: 1149558496}
+  maxGrowthToEnter: 0
 --- !u!61 &1742143307
 BoxCollider2D:
   m_ObjectHideFlags: 0

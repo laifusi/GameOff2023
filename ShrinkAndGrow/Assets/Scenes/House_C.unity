@@ -507,7 +507,9 @@ MonoBehaviour:
   houseScene: 
   needsKey: 0
   keyType: 0
-  doorCanvas: {fileID: 1932426919}
+  enterDoorUI: {fileID: 1932426919}
+  cantEnterDoorUI: {fileID: 0}
+  maxGrowthToEnter: 1
 --- !u!61 &744105010
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1114,6 +1116,10 @@ PrefabInstance:
     - target: {fileID: 3763088886717819858, guid: 214c7863a3c9e934ba9e07915327690a, type: 3}
       propertyPath: m_fontSize
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763088886717819868, guid: 214c7863a3c9e934ba9e07915327690a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3763088888142127793, guid: 214c7863a3c9e934ba9e07915327690a, type: 3}
       propertyPath: m_Name
