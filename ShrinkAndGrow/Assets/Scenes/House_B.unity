@@ -1193,6 +1193,8 @@ MonoBehaviour:
   - entryPoint: {fileID: 1309774025}
     previousScene: Level1
   character: {fileID: 901976100}
+  maxGrowthLevel: 0
+  minGrowthLevel: -1
 --- !u!4 &1756275949
 Transform:
   m_ObjectHideFlags: 0

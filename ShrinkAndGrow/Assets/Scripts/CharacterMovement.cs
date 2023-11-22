@@ -28,6 +28,8 @@ public class CharacterMovement : MonoBehaviour
     private float currentCamSize;
 
     private int growthValue;
+    private int currentMaxGrowth;
+    private int currentMinGrowth;
 
     private IEnumerator Start()
     {
@@ -62,13 +64,13 @@ public class CharacterMovement : MonoBehaviour
             animator.SetTrigger("Jump");
         }
 
-        if(Input.GetKeyDown(KeyCode.P) && inventory.HasPotion())
+        if(Input.GetKeyDown(KeyCode.P) && inventory.HasPotion() && growthValue > currentMinGrowth)
         {
             StartCoroutine(Shrink());
             inventory.DrinkPotion();
         }
 
-        if(Input.GetKeyDown(KeyCode.O) && inventory.HasOrange())
+        if(Input.GetKeyDown(KeyCode.O) && inventory.HasOrange() && growthValue < currentMaxGrowth)
         {
             StartCoroutine(Grow());
             inventory.EatOrange();
@@ -119,19 +121,16 @@ public class CharacterMovement : MonoBehaviour
 
     private void ChangeInitialScale(int growthValue)
     {
-        if (growthValue >= 1)
+        if (growthValue >= 1 && growthValue <= currentMaxGrowth)
         {
-            growthValue = 1;
             transform.localScale *= 2;
             jumpForce *= 2;
             walkVelocity *= 2;
             rb.gravityScale *= 2;
             cam.orthographicSize *= 2;
         }
-        else if (growthValue <= -1)
+        else if (growthValue <= -1 && growthValue >= currentMinGrowth)
         {
-            growthValue = -1;
-
             transform.localScale /= 2;
             jumpForce /= 2;
             walkVelocity /= 2;
@@ -158,6 +157,12 @@ public class CharacterMovement : MonoBehaviour
             rb.AddForce(new Vector2(0, jumpForce));
             mustJump = false;
         }
+    }
+
+    public void SetGrowthLevelLimits(int min, int max)
+    {
+        currentMinGrowth = min;
+        currentMaxGrowth = max;
     }
 
     private void OnDisable()

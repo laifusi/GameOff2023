@@ -5,6 +5,8 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] LevelEntryPoint[] levelEntryPoints;
     [SerializeField] Transform character;
+    [SerializeField] int maxGrowthLevel = 1;
+    [SerializeField] int minGrowthLevel = -1;
 
     private Animator animator;
 
@@ -13,6 +15,8 @@ public class LevelManager : MonoBehaviour
         animator = GetComponent<Animator>();
 
         MenuManager.OnSceneFadeOut += ActivateSceneFadeOut;
+
+        character.GetComponent<CharacterMovement>().SetGrowthLevelLimits(minGrowthLevel, maxGrowthLevel);
 
         string previousLevel = PlayerPrefs.GetString("PreviousScene");
         foreach(LevelEntryPoint entryPoint in levelEntryPoints)
