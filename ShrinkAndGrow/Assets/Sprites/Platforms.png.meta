@@ -135,7 +135,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 451
+        y: 759
         width: 452
         height: 226
       alignment: 0
@@ -156,6 +156,27 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 307
+        width: 452
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca719f07a7ad9141801b206ab5ea909
+      internalID: -601886658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platforms_2
+      rect:
+        serializedVersion: 2
+        x: 12
         y: 0
         width: 452
         height: 226
@@ -166,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ca719f07a7ad9141801b206ab5ea909
-      internalID: -601886658
+      spriteID: f038e09143b583f47809572856842387
+      internalID: -714043399
       vertices: []
       indices: 
       edges: []
@@ -183,6 +204,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Platforms_2: -714043399
       Platforms_1: -601886658
       Platforms_0: -1346366422
   spritePackingTag: 

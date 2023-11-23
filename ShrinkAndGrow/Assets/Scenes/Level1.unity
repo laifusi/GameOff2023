@@ -844,7 +844,7 @@ SpriteRenderer:
   m_SortingLayerID: -2012970895
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8029d7ffd3e765141b49c9364e1b79ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7ed6755df8766514c8b59d128650f3c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9814,34 +9814,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 660337386192188944, guid: a29fc1c8ae9482a43a0740c3ccf919cc, type: 3}
-      propertyPath: orthographic size
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 660337386192188944, guid: a29fc1c8ae9482a43a0740c3ccf919cc, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.10980393
-      objectReference: {fileID: 0}
-    - target: {fileID: 660337386192188944, guid: a29fc1c8ae9482a43a0740c3ccf919cc, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.27058825
-      objectReference: {fileID: 0}
-    - target: {fileID: 660337386192188944, guid: a29fc1c8ae9482a43a0740c3ccf919cc, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.16470589
-      objectReference: {fileID: 0}
-    - target: {fileID: 660337386192189167, guid: a29fc1c8ae9482a43a0740c3ccf919cc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 660337386770067139, guid: a29fc1c8ae9482a43a0740c3ccf919cc, type: 3}
-      propertyPath: walkVelocity
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 660337386770067139, guid: a29fc1c8ae9482a43a0740c3ccf919cc, type: 3}
-      propertyPath: secondsToWait
-      value: 0.05
-      objectReference: {fileID: 0}
     - target: {fileID: 660337386770067140, guid: a29fc1c8ae9482a43a0740c3ccf919cc, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -9897,14 +9869,6 @@ PrefabInstance:
     - target: {fileID: 660337386770067140, guid: a29fc1c8ae9482a43a0740c3ccf919cc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 660337386770067141, guid: a29fc1c8ae9482a43a0740c3ccf919cc, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 660337386770067141, guid: a29fc1c8ae9482a43a0740c3ccf919cc, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 716911155
       objectReference: {fileID: 0}
     - target: {fileID: 660337386770067144, guid: a29fc1c8ae9482a43a0740c3ccf919cc, type: 3}
       propertyPath: m_Name
