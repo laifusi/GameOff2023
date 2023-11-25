@@ -20,6 +20,7 @@ public class CharacterMovement : MonoBehaviour
     private CharacterInventory inventory;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    private Collider2D col2D;
 
     private Vector3 currentScale;
     private float currentJumpForce;
@@ -31,12 +32,20 @@ public class CharacterMovement : MonoBehaviour
     private int currentMaxGrowth;
     private int currentMinGrowth;
 
+    private float initialColOffsetX;
+    private float initialColOffsetY;
+    private float newColOffsetX;
+
     private IEnumerator Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         inventory = GetComponent<CharacterInventory>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        col2D = GetComponent<Collider2D>();
+
+        initialColOffsetX = col2D.offset.x;
+        initialColOffsetY = col2D.offset.y;
 
         yield return null;
 
@@ -54,9 +63,15 @@ public class CharacterMovement : MonoBehaviour
 
         horizontal = Input.GetAxis("Horizontal");
         animator.SetBool("isWalking", horizontal != 0);
-        if(horizontal != 0)
+        if (horizontal != 0)
+        {
             spriteRenderer.flipX = horizontal < 0;
-
+            newColOffsetX = horizontal < 0 ? -initialColOffsetX : initialColOffsetX;
+            if(newColOffsetX != col2D.offset.x)
+            {
+                col2D.offset = new Vector2(newColOffsetX, initialColOffsetY);
+            }
+        }
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
