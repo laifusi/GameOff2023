@@ -34,7 +34,7 @@ public class NPCController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         CharacterInventory inventory = collision.GetComponent<CharacterInventory>();
         if (inventory != null)
@@ -49,7 +49,7 @@ public class NPCController : MonoBehaviour
                 StartWalk();
             }
         }
-    }
+    }*/
 
     public void StartWalk()
     {

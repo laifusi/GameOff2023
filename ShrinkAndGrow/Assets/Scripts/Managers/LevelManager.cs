@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] Transform character;
     [SerializeField] int maxGrowthLevel = 1;
     [SerializeField] int minGrowthLevel = -1;
+    [SerializeField] DialogueSO[] allDialogueSOs;
 
     private Animator animator;
 
@@ -31,6 +32,10 @@ public class LevelManager : MonoBehaviour
         // If no entry point, we are testing through the editor, should be a new game
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt("GrowthValue", -1);
+        foreach (DialogueSO dialogueSO in allDialogueSOs)
+        {
+            dialogueSO.Restart();
+        }
     }
 
     private void ActivateSceneFadeOut()
