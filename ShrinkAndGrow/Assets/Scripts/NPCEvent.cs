@@ -2,30 +2,31 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class DialogueEvent 
+public class NPCEvent 
 {
+    [SerializeField] EventTrigger type;
     [SerializeField] DialogueSO dialogue;
-    [SerializeField] EventType type;
     [SerializeField] DependencyType dependencyType;
     [SerializeField] DialogueSO dependencyDialogue;
-    [SerializeField] DialogueAction[] actions;
+    [SerializeField] EventActions[] actions;
 
-    private DialogueOwner owner;
+    private bool doneEvent;
 
     public DialogueSO Dialogue => dialogue;
-    public EventType Type => type;
+    public EventTrigger Type => type;
     public DependencyType DependencyType => dependencyType;
     public DialogueSO DependencyDialogue => dependencyDialogue;
-    public DialogueAction[] DialogueActions => actions;
+    public EventActions[] DialogueActions => actions;
+    public bool DoneEvent => doneEvent;
 
-    public void AssignOwner(DialogueOwner owner)
+    public void FinishEvent()
     {
-        this.owner = owner;
+        doneEvent = true;
     }
 }
 
 [Serializable]
-public struct DialogueAction
+public struct EventActions
 {
     [SerializeField] ActionType actionType;
     [SerializeField] string animationTriggerName;
@@ -86,7 +87,7 @@ public enum DependencyType
     None, Dialogue, Diamond
 }
 
-public enum EventType
+public enum EventTrigger
 {
-    ColliderTrigger, DialogueEnding
+    ColliderTrigger, DialogueEnding, WalkEnding
 }

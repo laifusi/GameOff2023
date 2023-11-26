@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - line: More tests
-    character: {fileID: 11400000, guid: ffe519c186809fc4cac304a3be11d7a4, type: 2}
+    character: {fileID: 11400000, guid: 8399486a455b27d43b07029545b273c3, type: 2}
   - line: More wwords
     character: {fileID: 11400000, guid: cc39425a27633974fb313bb7191dfcaf, type: 2}

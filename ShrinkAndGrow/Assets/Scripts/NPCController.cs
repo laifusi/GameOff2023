@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,9 @@ public class NPCController : MonoBehaviour
     private Vector3 targetPosition;
     private Vector3 direction;
     private bool firstContact;
+    private NPCEvent currentWalkEvent;
+
+    public static Action<NPCEvent> OnFinishedWalk;
 
     private void Start()
     {
@@ -51,10 +55,11 @@ public class NPCController : MonoBehaviour
         }
     }*/
 
-    public void StartWalk()
+    public void StartWalk(NPCEvent walkEvent)
     {
         if(destinies.Length > nextDestiny)
         {
+            currentWalkEvent = walkEvent;
             animator.SetTrigger("Walk");
             isWalking = true;
             destiny = destinies[nextDestiny];
@@ -79,6 +84,7 @@ public class NPCController : MonoBehaviour
             spriteRenderer.flipX = false;
             animator.SetTrigger("Idle");
             rb.velocity = Vector2.zero;
+            OnFinishedWalk?.Invoke(currentWalkEvent);
         }
     }
 }

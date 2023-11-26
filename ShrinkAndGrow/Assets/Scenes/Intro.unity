@@ -5706,8 +5706,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueEvents:
-  - dialogue: {fileID: 11400000, guid: 17b33c79f6007c24c8849c972dcd2ac5, type: 2}
-    type: 0
+  - type: 0
+    dialogue: {fileID: 11400000, guid: 17b33c79f6007c24c8849c972dcd2ac5, type: 2}
     dependencyType: 0
     dependencyDialogue: {fileID: 0}
     actions:
@@ -5715,8 +5715,26 @@ MonoBehaviour:
       animationTriggerName: Idle
     - actionType: 2
       animationTriggerName: 
-  - dialogue: {fileID: 11400000, guid: 6d3cdf3d6abe05642bd7dafcddc68e53, type: 2}
-    type: 0
+  - type: 0
+    dialogue: {fileID: 0}
+    dependencyType: 2
+    dependencyDialogue: {fileID: 0}
+    actions:
+    - actionType: 0
+      animationTriggerName: Walk
+    - actionType: 1
+      animationTriggerName: 
+  - type: 2
+    dialogue: {fileID: 11400000, guid: 06bc4c06d4929f4458927a46f3f8d538, type: 2}
+    dependencyType: 0
+    dependencyDialogue: {fileID: 0}
+    actions:
+    - actionType: 0
+      animationTriggerName: Idle
+    - actionType: 2
+      animationTriggerName: 
+  - type: 1
+    dialogue: {fileID: 11400000, guid: 6d3cdf3d6abe05642bd7dafcddc68e53, type: 2}
     dependencyType: 1
     dependencyDialogue: {fileID: 11400000, guid: 06bc4c06d4929f4458927a46f3f8d538, type: 2}
     actions:

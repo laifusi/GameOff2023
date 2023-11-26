@@ -16,4 +16,4 @@ MonoBehaviour:
   - line: Another test :D
     character: {fileID: 11400000, guid: e0e797ffa453ba74a95176cbdf3f0dee, type: 2}
   - line: More wwords
-    character: {fileID: 0}
+    character: {fileID: 11400000, guid: 0d29da00f35ad464ab9f994b04aded75, type: 2}

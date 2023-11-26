@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class DialogueUI : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] TMP_Text characterName;
     [SerializeField] Image characterImage;
     [SerializeField] TMP_Text line;
+
+    public static Action<DialogueSO> OnDialogueFinished;
 
     private DialogueSO currentDialogue;
 
@@ -20,6 +23,7 @@ public class DialogueUI : MonoBehaviour
     public void DeactivatePanel()
     {
         panel.SetActive(false);
+        OnDialogueFinished?.Invoke(currentDialogue);
     }
 
     public void ReadDialogue()
