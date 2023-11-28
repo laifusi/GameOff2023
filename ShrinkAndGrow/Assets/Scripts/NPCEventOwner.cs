@@ -169,6 +169,9 @@ public class NPCEventOwner : MonoBehaviour
                 case ActionType.NPCActivation:
                     TriggerActivateNPC(action.ActivateNPC);
                     break;
+                case ActionType.Collectible:
+                    TriggerCollectibleAction(action.CollectibleType, action.AddCollectible);
+                    break;
             }
         }
     }
@@ -194,9 +197,39 @@ public class NPCEventOwner : MonoBehaviour
         controller.ActivateNPC(activate);
     }
 
+    private void TriggerCollectibleAction(CollectibleType collectible, bool collect)
+    {
+        switch(collectible)
+        {
+            case CollectibleType.Diamond:
+                if (collect)
+                    CharacterInventory.Instance.AddDiamond();
+                else
+                    CharacterInventory.Instance.RemoveDiamond();
+                break;
+            case CollectibleType.GrowingFruit:
+                if (collect)
+                    CharacterInventory.Instance.AddOrange();
+                else
+                    CharacterInventory.Instance.EatOrange();
+                break;
+            case CollectibleType.ShrinkingFlower:
+                if (collect)
+                    CharacterInventory.Instance.AddPotion();
+                else
+                    CharacterInventory.Instance.DrinkPotion();
+                break;
+        }
+    }
+
     private void OnDestroy()
     {
         DialogueUI.OnDialogueFinished -= StartCheckDialogueTriggers;
         NPCController.OnFinishedWalk -= StartCheckWalkTriggers;
     }
+}
+
+public enum CollectibleType
+{
+    None, Diamond, GrowingFruit, ShrinkingFlower
 }

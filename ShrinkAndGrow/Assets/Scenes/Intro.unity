@@ -638,7 +638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 660337386770067140, guid: a29fc1c8ae9482a43a0740c3ccf919cc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.5
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 660337386770067140, guid: a29fc1c8ae9482a43a0740c3ccf919cc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4360,6 +4360,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f98782b4002975e44b92a2aaaf7a0ef6, type: 2}
     - target: {fileID: 1175937056, guid: 8f47624c92d468c4ab74562795ae2e0f, type: 3}
+      propertyPath: walkSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1175937056, guid: 8f47624c92d468c4ab74562795ae2e0f, type: 3}
       propertyPath: destinies.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -4381,7 +4385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5518377709555457174, guid: 8f47624c92d468c4ab74562795ae2e0f, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5518377709555457174, guid: 8f47624c92d468c4ab74562795ae2e0f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5715,10 +5719,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5e6cb95aaeab08644bb92865a90a4be6, type: 2}
   - {fileID: 11400000, guid: 5f20cf772c6c53b4ea7fdd2facec300b, type: 2}
   - {fileID: 11400000, guid: 246b420fb327731429654ec38c541416, type: 2}
+  - {fileID: 11400000, guid: f541ec826df66b945956a17d67e84c97, type: 2}
   - {fileID: 11400000, guid: 0c3bd63bfc9e77b4a8ec21332d1db402, type: 2}
   - {fileID: 11400000, guid: ffb64d45818fa8d4daf6b9b9bdfeee7f, type: 2}
   - {fileID: 11400000, guid: 97d152f03f2c2b741b71befbd7a9227c, type: 2}
   - {fileID: 11400000, guid: f98782b4002975e44b92a2aaaf7a0ef6, type: 2}
+  - {fileID: 11400000, guid: fe056e065dfc4c74fba02295d6391a50, type: 2}
+  - {fileID: 11400000, guid: 2f01f4022e9db404fbe5262256b91acb, type: 2}
 --- !u!4 &1654611695
 Transform:
   m_ObjectHideFlags: 0
@@ -6357,6 +6364,81 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1838050066
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1838050068, guid: 0f584a0fb0be1c34c812630348c9001d, type: 3}
+      propertyPath: dialogueUI
+      value: 
+      objectReference: {fileID: 1918656892}
+    - target: {fileID: 1838050068, guid: 0f584a0fb0be1c34c812630348c9001d, type: 3}
+      propertyPath: npcEvents.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838050068, guid: 0f584a0fb0be1c34c812630348c9001d, type: 3}
+      propertyPath: npcEvents.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: fe056e065dfc4c74fba02295d6391a50, type: 2}
+    - target: {fileID: 1838050068, guid: 0f584a0fb0be1c34c812630348c9001d, type: 3}
+      propertyPath: npcEvents.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f01f4022e9db404fbe5262256b91acb, type: 2}
+    - target: {fileID: 2798674181236281255, guid: 0f584a0fb0be1c34c812630348c9001d, type: 3}
+      propertyPath: m_Name
+      value: NPC_Scientist
+      objectReference: {fileID: 0}
+    - target: {fileID: 5451852939830833854, guid: 0f584a0fb0be1c34c812630348c9001d, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5451852939830833854, guid: 0f584a0fb0be1c34c812630348c9001d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 25.381922
+      objectReference: {fileID: 0}
+    - target: {fileID: 5451852939830833854, guid: 0f584a0fb0be1c34c812630348c9001d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -22.772352
+      objectReference: {fileID: 0}
+    - target: {fileID: 5451852939830833854, guid: 0f584a0fb0be1c34c812630348c9001d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5451852939830833854, guid: 0f584a0fb0be1c34c812630348c9001d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5451852939830833854, guid: 0f584a0fb0be1c34c812630348c9001d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5451852939830833854, guid: 0f584a0fb0be1c34c812630348c9001d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5451852939830833854, guid: 0f584a0fb0be1c34c812630348c9001d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5451852939830833854, guid: 0f584a0fb0be1c34c812630348c9001d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5451852939830833854, guid: 0f584a0fb0be1c34c812630348c9001d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5451852939830833854, guid: 0f584a0fb0be1c34c812630348c9001d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0f584a0fb0be1c34c812630348c9001d, type: 3}
 --- !u!1 &1851283233
 GameObject:
   m_ObjectHideFlags: 0
@@ -6471,7 +6553,7 @@ PrefabInstance:
       objectReference: {fileID: 1918656892}
     - target: {fileID: 1462436596, guid: c9a684ace7738a245a0b5dcd9d151064, type: 3}
       propertyPath: npcEvents.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1462436596, guid: c9a684ace7738a245a0b5dcd9d151064, type: 3}
       propertyPath: npcEvents.Array.data[2]
@@ -6485,6 +6567,10 @@ PrefabInstance:
       propertyPath: npcEvents.Array.data[4]
       value: 
       objectReference: {fileID: 11400000, guid: 246b420fb327731429654ec38c541416, type: 2}
+    - target: {fileID: 1462436596, guid: c9a684ace7738a245a0b5dcd9d151064, type: 3}
+      propertyPath: npcEvents.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: f541ec826df66b945956a17d67e84c97, type: 2}
     - target: {fileID: 4783577913677937134, guid: c9a684ace7738a245a0b5dcd9d151064, type: 3}
       propertyPath: m_Name
       value: NPC_Lady

@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66f6c839977846147b0967c7359baa8c, type: 3}
-  m_Name: MrsJones_2_Diamond_1
+  m_Name: Scientist_2_GiveFlowerAndTalk
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 4990c36917545574cadf50494af403ad, type: 2}
-  eventTrigger: 0
-  dependencyType: 2
-  dependencyEvent: {fileID: 0}
+  dialogue: {fileID: 11400000, guid: c36906a00da28fd4db23e969e8def953, type: 2}
+  eventTrigger: 1
+  dependencyType: 1
+  dependencyEvent: {fileID: 11400000, guid: fe056e065dfc4c74fba02295d6391a50, type: 2}
   actions:
+  - actionType: 4
+    animationTriggerName: 
+    activateNPC: 0
+    collectibleType: 3
+    addCollectible: 1
   - actionType: 2
     animationTriggerName: 
     activateNPC: 0
     collectibleType: 0
-    addCollectible: 0
-  - actionType: 4
-    animationTriggerName: 
-    activateNPC: 0
-    collectibleType: 1
     addCollectible: 0

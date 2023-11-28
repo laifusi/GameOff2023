@@ -16,6 +16,7 @@ public class CharacterInventory : MonoBehaviour
     public static Action<int> OnOrangesUpdated;
     public static Action<KeyType> OnKeysUpdated;
     public static Action OnDiamondUpdated;
+    public static Action OnDiamondRemoved;
 
     private void Awake()
     {
@@ -98,6 +99,12 @@ public class CharacterInventory : MonoBehaviour
     {
         diamond = true;
         OnDiamondUpdated?.Invoke();
+    }
+
+    public void RemoveDiamond()
+    {
+        diamond = false;
+        OnDiamondRemoved?.Invoke();
     }
 
     public bool HasDiamond()

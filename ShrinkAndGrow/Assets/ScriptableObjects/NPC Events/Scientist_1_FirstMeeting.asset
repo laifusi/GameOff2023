@@ -10,20 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66f6c839977846147b0967c7359baa8c, type: 3}
-  m_Name: MrsJones_2_Diamond_1
+  m_Name: Scientist_1_FirstMeeting
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 4990c36917545574cadf50494af403ad, type: 2}
-  eventTrigger: 0
-  dependencyType: 2
-  dependencyEvent: {fileID: 0}
+  dialogue: {fileID: 11400000, guid: ad7cd66c592168e4ebd0b73dd9b9d5a4, type: 2}
+  eventTrigger: 1
+  dependencyType: 1
+  dependencyEvent: {fileID: 11400000, guid: f541ec826df66b945956a17d67e84c97, type: 2}
   actions:
+  - actionType: 0
+    animationTriggerName: Idle
+    activateNPC: 0
+  - actionType: 3
+    animationTriggerName: 
+    activateNPC: 1
   - actionType: 2
     animationTriggerName: 
     activateNPC: 0
-    collectibleType: 0
-    addCollectible: 0
-  - actionType: 4
-    animationTriggerName: 
-    activateNPC: 0
-    collectibleType: 1
-    addCollectible: 0

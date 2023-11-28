@@ -36,15 +36,19 @@ public struct EventActions
     [SerializeField] ActionType actionType;
     [SerializeField] string animationTriggerName;
     [SerializeField] bool activateNPC;
+    [SerializeField] CollectibleType collectibleType;
+    [SerializeField] bool addCollectible;
 
     public ActionType ActionType => actionType;
     public string AnimationTriggerName => animationTriggerName;
     public bool ActivateNPC => activateNPC;
+    public CollectibleType CollectibleType => collectibleType;
+    public bool AddCollectible => addCollectible;
 }
 
 public enum ActionType
 {
-    Animation, MoveToWaypoint, Talk, NPCActivation
+    Animation, MoveToWaypoint, Talk, NPCActivation, Collectible
 }
 
 public enum DependencyType

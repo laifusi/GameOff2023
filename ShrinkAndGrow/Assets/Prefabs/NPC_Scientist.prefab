@@ -74,6 +74,9 @@ GameObject:
   - component: {fileID: 546254362529759312}
   - component: {fileID: 6672345509985342251}
   - component: {fileID: 9063463827936550366}
+  - component: {fileID: 1838050070}
+  - component: {fileID: 1838050068}
+  - component: {fileID: 1838050069}
   m_Layer: 0
   m_Name: NPC_Scientist
   m_TagString: Untagged
@@ -97,7 +100,7 @@ Transform:
   - {fileID: 6327691003999588409}
   - {fileID: 7332006222836436924}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &546254362529759312
 SpriteRenderer:
@@ -191,11 +194,57 @@ MonoBehaviour:
   - {fileID: 7332006222836436924}
   - {fileID: 244953973567675624}
   m_Bounds:
-    m_Center: {x: -0.04672575, y: -0.49952602, z: 0}
-    m_Extent: {x: 0.86624014, y: 0.94088244, z: 0}
+    m_Center: {x: -0.04672563, y: -0.49952686, z: 0}
+    m_Extent: {x: 0.86624014, y: 0.94088185, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
+--- !u!58 &1838050070
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2798674181236281255}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.04672563, y: -0.49952686}
+  serializedVersion: 2
+  m_Radius: 3.537465
+--- !u!114 &1838050068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2798674181236281255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804d341e567949f4ca04680d06da4550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcEvents: []
+  dialogueUI: {fileID: 0}
+--- !u!114 &1838050069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2798674181236281255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ddb6ac19ffcdc4fa6fcdf466a11d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destinies: []
+  walkSpeed: 6
+  distanceThreshold: 1
+  shouldStartActive: 0
 --- !u!1 &2927960827258933341
 GameObject:
   m_ObjectHideFlags: 0

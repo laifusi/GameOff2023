@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71b628c1ec0a33499f177997030e775, type: 3}
+  m_Name: Scientist_1_FirstMeeting
+  m_EditorClassIdentifier: 
+  lines:
+  - line: Hello, Mrs Jones!
+    character: {fileID: 11400000, guid: e0e797ffa453ba74a95176cbdf3f0dee, type: 2}
+  - line: Hello, Alex!
+    character: {fileID: 11400000, guid: e0e797ffa453ba74a95176cbdf3f0dee, type: 2}
+  - line: Hello, doctor.
+    character: {fileID: 11400000, guid: cc39425a27633974fb313bb7191dfcaf, type: 2}
+  - line: We need your help.
+    character: {fileID: 11400000, guid: cc39425a27633974fb313bb7191dfcaf, type: 2}
+  - line: What's the matter?
+    character: {fileID: 11400000, guid: e0e797ffa453ba74a95176cbdf3f0dee, type: 2}
+  - line: A thief stole my diamond and I asked Alex to after them.
+    character: {fileID: 11400000, guid: cc39425a27633974fb313bb7191dfcaf, type: 2}
+  - line: But the thief changed their own size and left through a tiny door.
+    character: {fileID: 11400000, guid: 8399486a455b27d43b07029545b273c3, type: 2}
+  - line: We were wondering if you could help us.
+    character: {fileID: 11400000, guid: cc39425a27633974fb313bb7191dfcaf, type: 2}
+  - line: Oh I see...
+    character: {fileID: 11400000, guid: e0e797ffa453ba74a95176cbdf3f0dee, type: 2}
+  - line: I happen to have just what you need.
+    character: {fileID: 11400000, guid: e0e797ffa453ba74a95176cbdf3f0dee, type: 2}
+  - line: The purple flowers from the forest have properties that can make you shrink.
+    character: {fileID: 11400000, guid: e0e797ffa453ba74a95176cbdf3f0dee, type: 2}
+  - line: You'll have to eat their petals to make yourself smaller.
+    character: {fileID: 11400000, guid: e0e797ffa453ba74a95176cbdf3f0dee, type: 2}
+  - line: Here, have one to get you started on your journey.
+    character: {fileID: 11400000, guid: e0e797ffa453ba74a95176cbdf3f0dee, type: 2}
