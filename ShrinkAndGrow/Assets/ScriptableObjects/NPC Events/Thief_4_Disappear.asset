@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f6c839977846147b0967c7359baa8c, type: 3}
+  m_Name: Thief_4_Disappear
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 0}
+  eventTrigger: 2
+  dependencyType: 3
+  dependencyEvent: {fileID: 11400000, guid: ffb64d45818fa8d4daf6b9b9bdfeee7f, type: 2}
+  actions:
+  - actionType: 3
+    animationTriggerName: 
+    activateNPC: 0

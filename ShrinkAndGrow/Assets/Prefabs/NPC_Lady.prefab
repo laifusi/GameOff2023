@@ -54,7 +54,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4783577913614210891}
-  m_LocalRotation: {x: -0, y: -0, z: -0.7163473, w: 0.6977439}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7163473, w: 0.6977439}
   m_LocalPosition: {x: -0.3160019, y: -1.185, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -77,6 +77,8 @@ GameObject:
   - component: {fileID: 4783577913677937138}
   - component: {fileID: 1462436593}
   - component: {fileID: 1462436594}
+  - component: {fileID: 1462436595}
+  - component: {fileID: 1462436596}
   m_Layer: 0
   m_Name: NPC_Lady
   m_TagString: Untagged
@@ -100,7 +102,7 @@ Transform:
   - {fileID: 4783577913614210890}
   - {fileID: 4783577914201007906}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4783577913677937136
 SpriteRenderer:
@@ -195,8 +197,8 @@ MonoBehaviour:
   - {fileID: 4783577914201007906}
   - {fileID: 4783577915265221791}
   m_Bounds:
-    m_Center: {x: -0.009449244, y: -0.3157984, z: 0}
-    m_Extent: {x: 1.1797009, y: 1.1064436, z: 0}
+    m_Center: {x: -0.009449244, y: -0.31798327, z: 0}
+    m_Extent: {x: 1.1797009, y: 1.1086285, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -228,6 +230,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ddb6ac19ffcdc4fa6fcdf466a11d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destinies:
+  - {fileID: 0}
+  walkSpeed: 6
+  distanceThreshold: 1
+  shouldStartActive: 1
+--- !u!50 &1462436595
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4783577913677937134}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &1462436596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4783577913677937134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804d341e567949f4ca04680d06da4550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcEvents:
+  - {fileID: 11400000, guid: 0fc23b6143b9e1d4ab09f582280de4f3, type: 2}
+  - {fileID: 11400000, guid: 893b7439482af374c81d294a9f384b1f, type: 2}
+  dialogueUI: {fileID: 0}
 --- !u!1 &4783577914201007907
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,15 +295,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4783577914201007907}
-  m_LocalRotation: {x: -0, y: -0, z: -0.6988384, w: 0.71527964}
-  m_LocalPosition: {x: 0.2669983, y: -1.1830001, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.6931075, w: 0.7208343}
+  m_LocalPosition: {x: 0.2669983, y: -1.183, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4783577915265221791}
   m_Father: {fileID: 4783577913677937139}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -87.753}
 --- !u!1 &4783577914324353952
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,8 +359,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4783577914816484701}
-  m_LocalRotation: {x: 0, y: 0, z: 0.700317, w: 0.71383196}
-  m_LocalPosition: {x: 0.20357096, y: 0.000000040452278, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.700317, w: 0.713832}
+  m_LocalPosition: {x: 0.203571, y: 0.00000004045228, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -347,7 +391,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4783577915265221788}
   m_LocalRotation: {x: 0, y: 0, z: 0.6988384, w: 0.7152796}
-  m_LocalPosition: {x: 0.23033923, y: 0.000000005915366, z: 0}
+  m_LocalPosition: {x: 0.2303392, y: 0.000000005915366, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

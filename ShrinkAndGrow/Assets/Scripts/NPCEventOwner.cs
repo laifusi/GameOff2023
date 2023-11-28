@@ -1,8 +1,9 @@
+using System.Collections;
 using UnityEngine;
 
 public class NPCEventOwner : MonoBehaviour
 {
-    [SerializeField] NPCEvent[] dialogueEvents;
+    [SerializeField] NPCEvent[] npcEvents;
     [SerializeField] DialogueUI dialogueUI;
 
     private Animator animator;
@@ -13,12 +14,13 @@ public class NPCEventOwner : MonoBehaviour
         animator = GetComponent<Animator>();
         controller = GetComponent<NPCController>();
 
-        DialogueUI.OnDialogueFinished += CheckDialogueTriggers;
-        NPCController.OnFinishedWalk += CheckWalkTriggers;
+        DialogueUI.OnDialogueFinished += StartCheckDialogueTriggers;
+        NPCController.OnFinishedWalk += StartCheckWalkTriggers;
 
-        foreach(NPCEvent dialogueEvent in dialogueEvents)
+        foreach(NPCEvent npcEvent in npcEvents)
         {
-            dialogueEvent.Dialogue?.Restart();
+            if(npcEvent.Dialogue != null)
+                npcEvent.Dialogue.Restart();
         }
     }
 
@@ -27,25 +29,29 @@ public class NPCEventOwner : MonoBehaviour
         CharacterInventory inventory = collision.GetComponent<CharacterInventory>();
         if (inventory != null)
         {
-            for(int i = 0; i < dialogueEvents.Length; i++)
+            for(int i = 0; i < npcEvents.Length; i++)
             {
-                NPCEvent dialogueEvent = dialogueEvents[i];
-                if (!dialogueEvent.DoneEvent)
+                NPCEvent npcEvent = npcEvents[i];
+                if (!npcEvent.DoneEvent)
                 {
-                    if(dialogueEvent.Type == EventTrigger.ColliderTrigger)
+                    if(npcEvent.EventTrigger == EventTrigger.ColliderTrigger)
                     {
-                        switch(dialogueEvent.DependencyType)
+                        switch(npcEvent.DependencyType)
                         {
                             case DependencyType.None:
-                                PlayDialogueEvent(dialogueEvent);
+                                PlayDialogueEvent(npcEvent);
                                 return;
                             case DependencyType.Dialogue:
-                                if (!dialogueEvent.DependencyDialogue.HasMoreLines())
-                                    PlayDialogueEvent(dialogueEvent);
+                                if (npcEvent.DependencyEvent.DoneEvent)
+                                    PlayDialogueEvent(npcEvent);
                                 return;
                             case DependencyType.Diamond:
                                 if (inventory.HasDiamond())
-                                    PlayDialogueEvent(dialogueEvent);
+                                    PlayDialogueEvent(npcEvent);
+                                return;
+                            case DependencyType.Walk:
+                                if (npcEvent.DependencyEvent.DoneEvent)
+                                    PlayDialogueEvent(npcEvent);
                                 return;
                         }
                     }
@@ -54,69 +60,100 @@ public class NPCEventOwner : MonoBehaviour
         }
     }
 
-    private void CheckDialogueTriggers(DialogueSO triggerDialogue)
+    private void StartCheckDialogueTriggers(DialogueSO triggerDialogue)
     {
-        for (int i = 0; i < dialogueEvents.Length; i++)
+        StartCoroutine(CheckDialogueTriggers(triggerDialogue));
+    }
+
+    private IEnumerator CheckDialogueTriggers(DialogueSO triggerDialogue)
+    {
+        for (int i = 0; i < npcEvents.Length; i++)
         {
-            NPCEvent dialogueEvent = dialogueEvents[i];
-
-            if (dialogueEvent.Dialogue == triggerDialogue)
-                dialogueEvent.FinishEvent();
-
-            if (!dialogueEvent.DoneEvent)
+            NPCEvent npcEvent = npcEvents[i];
+            if (npcEvent.Dialogue == triggerDialogue)
             {
-                if (dialogueEvent.Type == EventTrigger.DialogueEnding)
+                npcEvent.FinishEvent();
+            }
+        }
+
+        yield return null;
+
+        for(int i = 0; i < npcEvents.Length; i++)
+        {
+            NPCEvent npcEvent = npcEvents[i];
+            if (!npcEvent.DoneEvent)
+            {
+                if (npcEvent.EventTrigger == EventTrigger.DialogueEnding)
                 {
-                    switch (dialogueEvent.DependencyType)
+                    switch (npcEvent.DependencyType)
                     {
-                        case DependencyType.None:
-                            PlayDialogueEvent(dialogueEvent);
-                            return;
+                        /*case DependencyType.None:
+                            PlayDialogueEvent(npcEvent);
+                            return;*/
                         case DependencyType.Dialogue:
-                            if (!dialogueEvent.DependencyDialogue.HasMoreLines())
+                            if (npcEvent.DependencyEvent.DoneEvent)
                             {
-                                PlayDialogueEvent(dialogueEvent);
+                                PlayDialogueEvent(npcEvent);
                             }
-                            return;
+                            break;
                     }
                 }
             }
         }
     }
 
-    private void CheckWalkTriggers(NPCEvent triggerEvent)
+    private void StartCheckWalkTriggers(NPCEvent triggerEvent)
     {
-        for (int i = 0; i < dialogueEvents.Length; i++)
+        StartCoroutine(CheckWalkTriggers(triggerEvent));
+    }
+
+    private IEnumerator CheckWalkTriggers(NPCEvent triggerEvent)
+    {
+        for (int i = 0; i < npcEvents.Length; i++)
         {
-            NPCEvent dialogueEvent = dialogueEvents[i];
-
-            if (dialogueEvent == triggerEvent)
-                dialogueEvent.FinishEvent();
-
-            if (!dialogueEvent.DoneEvent)
+            NPCEvent npcEvent = npcEvents[i];
+            if (npcEvent == triggerEvent)
             {
-                if (dialogueEvent.Type == EventTrigger.WalkEnding)
+                npcEvent.FinishEvent();
+            }
+        }
+
+        yield return null;
+
+        for (int i = 0; i < npcEvents.Length; i++)
+        {
+            NPCEvent npcEvent = npcEvents[i];
+            Debug.Log(npcEvent);
+            if (!npcEvent.DoneEvent)
+            {
+                if (npcEvent.EventTrigger == EventTrigger.WalkEnding)
                 {
-                    switch (dialogueEvent.DependencyType)
+                    switch (npcEvent.DependencyType)
                     {
-                        case DependencyType.None:
-                            PlayDialogueEvent(dialogueEvent);
+                        /*case DependencyType.None:
+                            PlayDialogueEvent(npcEvent);
                             return;
                         case DependencyType.Dialogue:
-                            if (!dialogueEvent.DependencyDialogue.HasMoreLines())
+                            if (!npcEvent.DependencyEvent.DoneEvent)
                             {
-                                PlayDialogueEvent(dialogueEvent);
+                                PlayDialogueEvent(npcEvent);
                             }
-                            return;
+                            return;*/
+                        case DependencyType.Walk:
+                            if (npcEvent.DependencyEvent.DoneEvent)
+                            {
+                                PlayDialogueEvent(npcEvent);
+                            }
+                            break;
                     }
                 }
             }
         }
     }
 
-    private void PlayDialogueEvent(NPCEvent dialogueEvent)
+    private void PlayDialogueEvent(NPCEvent npcEvent)
     {
-        foreach(EventActions action in dialogueEvent.DialogueActions)
+        foreach(EventActions action in npcEvent.EventActions)
         {
             switch(action.ActionType)
             {
@@ -124,10 +161,13 @@ public class NPCEventOwner : MonoBehaviour
                     TriggerAnimation(action.AnimationTriggerName);
                     break;
                 case ActionType.MoveToWaypoint:
-                    TriggerWalk(dialogueEvent);
+                    TriggerWalk(npcEvent);
                     break;
                 case ActionType.Talk:
-                    TriggerDialogue(dialogueEvent.Dialogue);
+                    TriggerDialogue(npcEvent.Dialogue);
+                    break;
+                case ActionType.NPCActivation:
+                    TriggerActivateNPC(action.ActivateNPC);
                     break;
             }
         }
@@ -149,9 +189,14 @@ public class NPCEventOwner : MonoBehaviour
         dialogueUI.ReadDialogue();
     }
 
+    private void TriggerActivateNPC(bool activate)
+    {
+        controller.ActivateNPC(activate);
+    }
+
     private void OnDestroy()
     {
-        DialogueUI.OnDialogueFinished -= CheckDialogueTriggers;
-        NPCController.OnFinishedWalk -= CheckWalkTriggers;
+        DialogueUI.OnDialogueFinished -= StartCheckDialogueTriggers;
+        NPCController.OnFinishedWalk -= StartCheckWalkTriggers;
     }
 }

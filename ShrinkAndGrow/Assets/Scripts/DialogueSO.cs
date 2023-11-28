@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,4 +28,14 @@ public class DialogueSO : ScriptableObject
     {
         return nextLineId < lines.Length;
     }
+}
+
+[Serializable]
+public struct DialogueLine
+{
+    [SerializeField] string line;
+    [SerializeField] CharacterSO character;
+
+    public string Line => line;
+    public CharacterSO Character => character;
 }

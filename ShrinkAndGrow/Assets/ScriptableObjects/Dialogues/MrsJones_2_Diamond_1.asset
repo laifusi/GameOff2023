@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a71b628c1ec0a33499f177997030e775, type: 3}
-  m_Name: Test3
+  m_Name: MrsJones_2_Diamond_1
   m_EditorClassIdentifier: 
   lines:
-  - line: More tests
+  - line: Here. I got it!
     character: {fileID: 11400000, guid: 8399486a455b27d43b07029545b273c3, type: 2}
-  - line: More wwords
+  - line: Oh! Thank you! Thank you so much!
     character: {fileID: 11400000, guid: cc39425a27633974fb313bb7191dfcaf, type: 2}

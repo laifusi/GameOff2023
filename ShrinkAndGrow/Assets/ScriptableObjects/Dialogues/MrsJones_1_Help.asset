@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71b628c1ec0a33499f177997030e775, type: 3}
+  m_Name: MrsJones_1_Help
+  m_EditorClassIdentifier: 
+  lines:
+  - line: Oh! Alex!
+    character: {fileID: 11400000, guid: cc39425a27633974fb313bb7191dfcaf, type: 2}
+  - line: Thank God you're here!
+    character: {fileID: 11400000, guid: cc39425a27633974fb313bb7191dfcaf, type: 2}
+  - line: Hello, Mrs. Jones!
+    character: {fileID: 11400000, guid: 8399486a455b27d43b07029545b273c3, type: 2}
+  - line: I need your help.
+    character: {fileID: 11400000, guid: cc39425a27633974fb313bb7191dfcaf, type: 2}
+  - line: See that diamond up there?
+    character: {fileID: 11400000, guid: cc39425a27633974fb313bb7191dfcaf, type: 2}
+  - line: I need it but I can't reach it.
+    character: {fileID: 11400000, guid: cc39425a27633974fb313bb7191dfcaf, type: 2}
+  - line: Can you help me?
+    character: {fileID: 11400000, guid: cc39425a27633974fb313bb7191dfcaf, type: 2}
+  - line: Of course!
+    character: {fileID: 11400000, guid: 8399486a455b27d43b07029545b273c3, type: 2}

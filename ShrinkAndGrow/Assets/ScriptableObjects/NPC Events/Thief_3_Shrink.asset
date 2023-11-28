@@ -9,9 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a71b628c1ec0a33499f177997030e775, type: 3}
-  m_Name: Test1
+  m_Script: {fileID: 11500000, guid: 66f6c839977846147b0967c7359baa8c, type: 3}
+  m_Name: Thief_3_Shrink
   m_EditorClassIdentifier: 
-  lines:
-  - line: this is a TEST
-    character: {fileID: 11400000, guid: ffe519c186809fc4cac304a3be11d7a4, type: 2}
+  dialogue: {fileID: 0}
+  eventTrigger: 0
+  dependencyType: 0
+  dependencyEvent: {fileID: 0}
+  actions:
+  - actionType: 0
+    animationTriggerName: Shrink
+    activateNPC: 0

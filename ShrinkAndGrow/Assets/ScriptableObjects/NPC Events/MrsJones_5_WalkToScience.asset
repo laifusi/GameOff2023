@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f6c839977846147b0967c7359baa8c, type: 3}
+  m_Name: MrsJones_5_WalkToScience
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 0}
+  eventTrigger: 1
+  dependencyType: 1
+  dependencyEvent: {fileID: 11400000, guid: 5f20cf772c6c53b4ea7fdd2facec300b, type: 2}
+  actions:
+  - actionType: 0
+    animationTriggerName: Walk
+    activateNPC: 0
+  - actionType: 1
+    animationTriggerName: 
+    activateNPC: 0

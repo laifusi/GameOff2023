@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] int maxGrowthLevel = 1;
     [SerializeField] int minGrowthLevel = -1;
     [SerializeField] DialogueSO[] allDialogueSOs;
+    [SerializeField] NPCEvent[] allNPCEventSOs;
 
     private Animator animator;
 
@@ -35,6 +36,10 @@ public class LevelManager : MonoBehaviour
         foreach (DialogueSO dialogueSO in allDialogueSOs)
         {
             dialogueSO.Restart();
+        }
+        foreach(NPCEvent npcEventSO in allNPCEventSOs)
+        {
+            npcEventSO.Restart();
         }
     }
 

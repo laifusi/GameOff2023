@@ -7,18 +7,20 @@ public class NPCController : MonoBehaviour
 {
     [SerializeField] Transform[] destinies;
     [SerializeField] float walkSpeed = 6f;
-    [SerializeField] float distanceThreshold = 0.1f;
+    [SerializeField] float distanceThreshold = 1;
+    [SerializeField] bool shouldStartActive = true;
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
+    Collider2D col2D;
+
     private int nextDestiny;
     private bool isWalking;
     private Transform destiny;
     private Vector3 currentPosition;
     private Vector3 targetPosition;
     private Vector3 direction;
-    private bool firstContact;
     private NPCEvent currentWalkEvent;
 
     public static Action<NPCEvent> OnFinishedWalk;
@@ -28,6 +30,9 @@ public class NPCController : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        col2D = GetComponent<Collider2D>();
+
+        ActivateNPC(shouldStartActive);
     }
 
     private void Update()
@@ -37,23 +42,6 @@ public class NPCController : MonoBehaviour
             UpdatePosition();
         }
     }
-
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        CharacterInventory inventory = collision.GetComponent<CharacterInventory>();
-        if (inventory != null)
-        {
-            if(!firstContact)
-            {
-                animator.SetTrigger("Idle");
-                firstContact = true;
-            }
-            else if(inventory.HasDiamond())
-            {
-                StartWalk();
-            }
-        }
-    }*/
 
     public void StartWalk(NPCEvent walkEvent)
     {
@@ -86,5 +74,11 @@ public class NPCController : MonoBehaviour
             rb.velocity = Vector2.zero;
             OnFinishedWalk?.Invoke(currentWalkEvent);
         }
+    }
+
+    public void ActivateNPC(bool activate)
+    {
+        spriteRenderer.enabled = activate;
+        col2D.enabled = activate;
     }
 }
