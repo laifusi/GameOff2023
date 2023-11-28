@@ -638,7 +638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 660337386770067140, guid: a29fc1c8ae9482a43a0740c3ccf919cc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 53.77
+      value: -10.5
       objectReference: {fileID: 0}
     - target: {fileID: 660337386770067140, guid: a29fc1c8ae9482a43a0740c3ccf919cc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4375,6 +4375,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Thief
       objectReference: {fileID: 0}
+    - target: {fileID: 2921073274212011327, guid: 8f47624c92d468c4ab74562795ae2e0f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5518377709555457174, guid: 8f47624c92d468c4ab74562795ae2e0f, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -4418,6 +4422,18 @@ PrefabInstance:
     - target: {fileID: 5518377709555457174, guid: 8f47624c92d468c4ab74562795ae2e0f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9007505035264244993, guid: 8f47624c92d468c4ab74562795ae2e0f, type: 3}
+      propertyPath: m_Bounds.m_Center.x
+      value: 0.004228592
+      objectReference: {fileID: 0}
+    - target: {fileID: 9007505035264244993, guid: 8f47624c92d468c4ab74562795ae2e0f, type: 3}
+      propertyPath: m_Bounds.m_Center.y
+      value: -0.50990933
+      objectReference: {fileID: 0}
+    - target: {fileID: 9007505035264244993, guid: 8f47624c92d468c4ab74562795ae2e0f, type: 3}
+      propertyPath: m_Bounds.m_Extent.y
+      value: 0.9349095
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

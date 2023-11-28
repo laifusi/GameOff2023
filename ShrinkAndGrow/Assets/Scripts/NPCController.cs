@@ -81,4 +81,14 @@ public class NPCController : MonoBehaviour
         spriteRenderer.enabled = activate;
         col2D.enabled = activate;
     }
+
+    public void Appear()
+    {
+        ActivateNPC(true);
+    }
+
+    public void Disappear()
+    {
+        ActivateNPC(false);
+    }
 }
