@@ -8,15 +8,15 @@ public class LevelIntroController : MonoBehaviour
     [SerializeField] GameObject[] initiallyActiveElements;
     [SerializeField] GameObject[] onTriggerActiveElements;
     [SerializeField] GameObject[] onTriggerDeactivateElements;
+    [SerializeField] LevelManager levelManager;
 
     private void Start()
     {
-        string previousLevel = PlayerPrefs.GetString("PreviousScene");
-        if (previousLevel == "Intro")
+        if(levelManager.IsFirstTime)
         {
-            foreach(GameObject go in initiallyDeactivatedElements)
+            foreach (GameObject go in initiallyDeactivatedElements)
                 go.SetActive(false);
-            foreach(GameObject go in initiallyActiveElements)
+            foreach (GameObject go in initiallyActiveElements)
                 go.SetActive(true);
         }
     }

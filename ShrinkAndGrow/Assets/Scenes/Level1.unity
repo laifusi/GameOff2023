@@ -2288,6 +2288,7 @@ MonoBehaviour:
   npc: {fileID: 1654616416}
   initiallyClosedElements: {fileID: 0}
   initiallyOpenElements: {fileID: 0}
+  isMainLevel: 1
 --- !u!95 &398933999
 Animator:
   serializedVersion: 4
@@ -4966,6 +4967,7 @@ MonoBehaviour:
   onTriggerDeactivateElements:
   - {fileID: 1572707507}
   - {fileID: 293574021}
+  levelManager: {fileID: 398933998}
 --- !u!4 &1041776156
 Transform:
   m_ObjectHideFlags: 0
@@ -8815,7 +8817,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630547628}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.45, y: -29, z: 0}
+  m_LocalPosition: {x: 1.82, y: -29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8834,7 +8836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5c150c081f0c34ba1fbf8ab6155da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevelName: Intro
+  nextLevelName: Outro
 --- !u!61 &1630547631
 BoxCollider2D:
   m_ObjectHideFlags: 0

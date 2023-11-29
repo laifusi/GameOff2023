@@ -10,10 +10,12 @@ public class LevelManager : MonoBehaviour
     [SerializeField] DialogueSO[] allDialogueSOs;
     [SerializeField] NPCEvent[] allNPCEventSOs;
     [SerializeField] GameObject npc;
-    [SerializeField] GameObject initiallyClosedElements;
-    [SerializeField] GameObject initiallyOpenElements;
+    [SerializeField] bool isMainLevel;
 
     private Animator animator;
+    private bool isFirstTime = true;
+
+    public bool IsFirstTime => isFirstTime;
 
     private void Start()
     {
@@ -26,6 +28,14 @@ public class LevelManager : MonoBehaviour
         string previousLevel = PlayerPrefs.GetString("PreviousScene");
         if(npc != null)
             npc.SetActive(previousLevel == "Intro" || previousLevel == "Level1");
+        if((isMainLevel && previousLevel == "Intro") || !isMainLevel)
+        {
+            isFirstTime = true;
+        }
+        else
+        {
+            isFirstTime = false;
+        }
         foreach (LevelEntryPoint entryPoint in levelEntryPoints)
         {
             if(entryPoint.GetPreviousScene() == previousLevel)
