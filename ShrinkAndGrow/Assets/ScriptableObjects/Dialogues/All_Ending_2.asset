@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71b628c1ec0a33499f177997030e775, type: 3}
+  m_Name: All_Ending_2
+  m_EditorClassIdentifier: 
+  lines:
+  - line: Mr Mayor!?
+    character: {fileID: 11400000, guid: 8399486a455b27d43b07029545b273c3, type: 2}
+  - line: Yes, Alex. It's me.
+    character: {fileID: 11400000, guid: ffe519c186809fc4cac304a3be11d7a4, type: 2}
+  - line: We're sorry about all this but we needed to know if you were the right
+      person for this.
+    character: {fileID: 11400000, guid: e0e797ffa453ba74a95176cbdf3f0dee, type: 2}
+  - line: I don't understand.
+    character: {fileID: 11400000, guid: 8399486a455b27d43b07029545b273c3, type: 2}
+  - line: War is brewing, Alex.
+    character: {fileID: 11400000, guid: ffe519c186809fc4cac304a3be11d7a4, type: 2}
+  - line: This was all a test. To make sure you were ready for a very important mission.
+    character: {fileID: 11400000, guid: ffe519c186809fc4cac304a3be11d7a4, type: 2}
+  - line: If you want to, of course.
+    character: {fileID: 11400000, guid: cc39425a27633974fb313bb7191dfcaf, type: 2}
+  - line: Come with us to the City Hall and we'll explain everything.
+    character: {fileID: 11400000, guid: ffe519c186809fc4cac304a3be11d7a4, type: 2}

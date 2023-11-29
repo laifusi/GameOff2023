@@ -9,6 +9,7 @@ public class NPCController : MonoBehaviour
     [SerializeField] float walkSpeed = 6f;
     [SerializeField] float distanceThreshold = 1;
     [SerializeField] bool shouldStartActive = true;
+    [SerializeField] bool startOnIdle = true;
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -31,6 +32,9 @@ public class NPCController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         col2D = GetComponent<Collider2D>();
+
+        if (startOnIdle)
+            animator.SetTrigger("Idle");
 
         ActivateNPC(shouldStartActive);
     }

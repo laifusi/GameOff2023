@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71b628c1ec0a33499f177997030e775, type: 3}
+  m_Name: All_Ending
+  m_EditorClassIdentifier: 
+  lines:
+  - line: Ah, Alex. You're back already.
+    character: {fileID: 11400000, guid: cc39425a27633974fb313bb7191dfcaf, type: 2}
+  - line: And I see you've got the diamond. Good job!
+    character: {fileID: 11400000, guid: cc39425a27633974fb313bb7191dfcaf, type: 2}
+  - line: Mrs Jones! Dr Smith! The thief!! They're behind you!
+    character: {fileID: 11400000, guid: 8399486a455b27d43b07029545b273c3, type: 2}
+  - line: We know, Alex. It's alright.
+    character: {fileID: 11400000, guid: e0e797ffa453ba74a95176cbdf3f0dee, type: 2}
+  - line: Hello, Alex.
+    character: {fileID: 11400000, guid: 0d29da00f35ad464ab9f994b04aded75, type: 2}
+  - line: Let us explain everything.
+    character: {fileID: 11400000, guid: 0d29da00f35ad464ab9f994b04aded75, type: 2}

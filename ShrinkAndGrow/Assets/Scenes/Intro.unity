@@ -5888,8 +5888,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fe056e065dfc4c74fba02295d6391a50, type: 2}
   - {fileID: 11400000, guid: 2f01f4022e9db404fbe5262256b91acb, type: 2}
   npc: {fileID: 0}
-  initiallyClosedElements: {fileID: 0}
-  initiallyOpenElements: {fileID: 0}
+  isMainLevel: 0
 --- !u!4 &1654611695
 Transform:
   m_ObjectHideFlags: 0
@@ -6695,6 +6694,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1462436594, guid: c9a684ace7738a245a0b5dcd9d151064, type: 3}
+      propertyPath: startOnIdle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1462436594, guid: c9a684ace7738a245a0b5dcd9d151064, type: 3}
       propertyPath: distanceThreshold
       value: 1.5
