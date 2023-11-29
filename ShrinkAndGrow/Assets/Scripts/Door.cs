@@ -37,8 +37,8 @@ public class Door : MonoBehaviour
 
     private void Update()
     {
-        if(cantEnterDoorUI != null && !activeDoor)
-            cantEnterDoorUI.SetActive(false);
+        //if(cantEnterDoorUI != null && !activeDoor)
+            //cantEnterDoorUI.SetActive(false);
 
         if (activeDoor && Input.GetKeyDown(KeyCode.E))
         {
@@ -66,5 +66,6 @@ public class Door : MonoBehaviour
     {
         activeDoor = false;
         enterDoorUI.SetActive(false);
+        cantEnterDoorUI.SetActive(false);
     }
 }

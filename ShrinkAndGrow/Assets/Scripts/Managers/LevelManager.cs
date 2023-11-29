@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] DialogueSO[] allDialogueSOs;
     [SerializeField] NPCEvent[] allNPCEventSOs;
     [SerializeField] GameObject npc;
+    [SerializeField] GameObject initiallyClosedElements;
+    [SerializeField] GameObject initiallyOpenElements;
 
     private Animator animator;
 
@@ -22,7 +24,8 @@ public class LevelManager : MonoBehaviour
         character.GetComponent<CharacterMovement>().SetGrowthLevelLimits(minGrowthLevel, maxGrowthLevel);
 
         string previousLevel = PlayerPrefs.GetString("PreviousScene");
-        npc?.SetActive(previousLevel == "Intro" || previousLevel == "Level1");
+        if(npc != null)
+            npc.SetActive(previousLevel == "Intro" || previousLevel == "Level1");
         foreach (LevelEntryPoint entryPoint in levelEntryPoints)
         {
             if(entryPoint.GetPreviousScene() == previousLevel)

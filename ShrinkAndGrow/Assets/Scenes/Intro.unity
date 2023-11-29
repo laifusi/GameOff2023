@@ -1156,6 +1156,8 @@ Transform:
   m_Children:
   - {fileID: 1851283234}
   - {fileID: 2067277226}
+  - {fileID: 1030780413}
+  - {fileID: 1371372940}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3784,6 +3786,81 @@ Transform:
   m_Father: {fileID: 346640600}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1030780412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1030780413}
+  - component: {fileID: 1030780414}
+  - component: {fileID: 1030780415}
+  m_Layer: 0
+  m_Name: ExitDoorCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1030780413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030780412}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -12.552002, y: -30.236, z: 0}
+  m_LocalScale: {x: 0.094776236, y: 0.12371261, z: 0.12371261}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 404310878}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1030780414
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030780412}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 3.5361269, y: -0.021844864}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7.3877177, y: 8.908562}
+  m_EdgeRadius: 0
+--- !u!114 &1030780415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030780412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d05a8f81685e0d44a5bb257a548081b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorImage: {fileID: 1851283233}
+  tunnelImage: {fileID: 2067277225}
+  needsDiamond: 0
+  needDiamondCanvas: {fileID: 0}
 --- !u!1 &1049348522
 GameObject:
   m_ObjectHideFlags: 0
@@ -4996,6 +5073,78 @@ Transform:
   m_Father: {fileID: 847211545}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1371372939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1371372940}
+  - component: {fileID: 1371372941}
+  - component: {fileID: 1371372942}
+  m_Layer: 0
+  m_Name: ExitLevelTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1371372940
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371372939}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.789604, y: -30.236, z: 0}
+  m_LocalScale: {x: 0.094776236, y: 0.12371261, z: 0.12371261}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 404310878}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1371372941
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371372939}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 3.5361269, y: -0.021844864}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7.3877177, y: 8.908562}
+  m_EdgeRadius: 0
+--- !u!114 &1371372942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371372939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5c150c081f0c34ba1fbf8ab6155da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevelName: Level1
 --- !u!1 &1414102168
 GameObject:
   m_ObjectHideFlags: 0
@@ -5738,6 +5887,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f98782b4002975e44b92a2aaaf7a0ef6, type: 2}
   - {fileID: 11400000, guid: fe056e065dfc4c74fba02295d6391a50, type: 2}
   - {fileID: 11400000, guid: 2f01f4022e9db404fbe5262256b91acb, type: 2}
+  npc: {fileID: 0}
 --- !u!4 &1654611695
 Transform:
   m_ObjectHideFlags: 0
