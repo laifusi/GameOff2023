@@ -111,6 +111,14 @@ public class CharacterInventory : MonoBehaviour
     {
         return diamond;
     }
+
+    public void Restart()
+    {
+        potions = 0;
+        oranges = 0;
+        keys.Clear();
+        diamond = false;
+    }
 }
 
 public enum KeyType

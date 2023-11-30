@@ -19,7 +19,7 @@ public class ObjectiveUI : MonoBehaviour
         {
             text.SetText(initialObjective.ObjectiveText);
         }
-        else
+        else if(goBackObjective != null)
         {
             text.SetText(goBackObjective.ObjectiveText);
         }

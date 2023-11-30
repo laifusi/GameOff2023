@@ -24,5 +24,8 @@ public class GameInitializer : MonoBehaviour
         {
             objectiveSO.Restart();
         }
+
+        if(CharacterInventory.Instance != null)
+            CharacterInventory.Instance.Restart();
     }
 }
