@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ public class NPCEventOwner : MonoBehaviour
 
     private Animator animator;
     private NPCController controller;
+
+    public static Action<NPCEvent> OnNewEvent;
 
     private void Start()
     {
@@ -73,6 +76,7 @@ public class NPCEventOwner : MonoBehaviour
             if (npcEvent.Dialogue == triggerDialogue)
             {
                 npcEvent.FinishEvent();
+                OnNewEvent?.Invoke(npcEvent);
             }
         }
 
@@ -87,9 +91,6 @@ public class NPCEventOwner : MonoBehaviour
                 {
                     switch (npcEvent.DependencyType)
                     {
-                        /*case DependencyType.None:
-                            PlayDialogueEvent(npcEvent);
-                            return;*/
                         case DependencyType.Dialogue:
                             if (npcEvent.DependencyEvent.DoneEvent)
                             {
@@ -115,6 +116,7 @@ public class NPCEventOwner : MonoBehaviour
             if (npcEvent == triggerEvent)
             {
                 npcEvent.FinishEvent();
+                OnNewEvent?.Invoke(npcEvent);
             }
         }
 
@@ -129,15 +131,6 @@ public class NPCEventOwner : MonoBehaviour
                 {
                     switch (npcEvent.DependencyType)
                     {
-                        /*case DependencyType.None:
-                            PlayDialogueEvent(npcEvent);
-                            return;
-                        case DependencyType.Dialogue:
-                            if (!npcEvent.DependencyEvent.DoneEvent)
-                            {
-                                PlayDialogueEvent(npcEvent);
-                            }
-                            return;*/
                         case DependencyType.Walk:
                             if (npcEvent.DependencyEvent.DoneEvent)
                             {

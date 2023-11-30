@@ -331,6 +331,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 97d152f03f2c2b741b71befbd7a9227c, type: 2}
   - {fileID: 11400000, guid: f98782b4002975e44b92a2aaaf7a0ef6, type: 2}
   - {fileID: 11400000, guid: affba5e78e265604f986cb726b67578d, type: 2}
+  allObjectiveSOs:
+  - {fileID: 11400000, guid: 4b7b499cdec587e41abff74ecad05a6b, type: 2}
+  - {fileID: 11400000, guid: a1230fa5cd261ec4bbf283a3f7f1dc2a, type: 2}
+  - {fileID: 11400000, guid: c2beeccac2f2d4848a5b9ec1eec43c20, type: 2}
+  - {fileID: 11400000, guid: 79b7758c848ab58468ceee18788fade0, type: 2}
+  - {fileID: 11400000, guid: a06581b08fb2d7e4b8affcea3350b8f1, type: 2}
+  - {fileID: 11400000, guid: 53229fbc1f8886e409175e6896668b1e, type: 2}
+  - {fileID: 11400000, guid: 65e97a790627b2d4eaac9c6da5000bad, type: 2}
+  - {fileID: 11400000, guid: e97443592bcdbdf4d86b9cfc5a47d0ab, type: 2}
+  - {fileID: 11400000, guid: 9e757be7d601b6845953b63ea6d4a711, type: 2}
+  - {fileID: 11400000, guid: 03754130462999d4fbb60c356291ec47, type: 2}
 --- !u!1 &765623274
 GameObject:
   m_ObjectHideFlags: 0

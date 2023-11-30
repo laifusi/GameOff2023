@@ -6,6 +6,7 @@ public class GameInitializer : MonoBehaviour
 {
     [SerializeField] DialogueSO[] allDialogueSOs;
     [SerializeField] NPCEvent[] allNPCEventSOs;
+    [SerializeField] ObjectiveSO[] allObjectiveSOs;
 
     private void Start()
     {
@@ -18,6 +19,10 @@ public class GameInitializer : MonoBehaviour
         foreach (NPCEvent npcEventSO in allNPCEventSOs)
         {
             npcEventSO.Restart();
+        }
+        foreach(ObjectiveSO objectiveSO in allObjectiveSOs)
+        {
+            objectiveSO.Restart();
         }
     }
 }

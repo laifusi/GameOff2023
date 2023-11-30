@@ -1012,11 +1012,8 @@ MonoBehaviour:
   character: {fileID: 901976100}
   maxGrowthLevel: 0
   minGrowthLevel: -1
-  allDialogueSOs: []
-  allNPCEventSOs: []
   npc: {fileID: 0}
-  initiallyClosedElements: {fileID: 0}
-  initiallyOpenElements: {fileID: 0}
+  isMainLevel: 0
 --- !u!4 &1455142083
 Transform:
   m_ObjectHideFlags: 0
@@ -1120,6 +1117,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1455142083}
     m_Modifications:
+    - target: {fileID: 1083529275, guid: 5ffbb81958eaffa43baa8f70647b6314, type: 3}
+      propertyPath: initialObjective
+      value: 
+      objectReference: {fileID: 11400000, guid: 65e97a790627b2d4eaac9c6da5000bad, type: 2}
     - target: {fileID: 7687301223400442902, guid: 5ffbb81958eaffa43baa8f70647b6314, type: 3}
       propertyPath: m_Name
       value: InventoryCanvas

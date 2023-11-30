@@ -285,7 +285,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 283.78625, y: 10.365633}
+  m_Size: {x: 283.78625, y: 10.85}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3008,6 +3008,34 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1654611695}
     m_Modifications:
+    - target: {fileID: 1083529275, guid: 5ffbb81958eaffa43baa8f70647b6314, type: 3}
+      propertyPath: initialObjective
+      value: 
+      objectReference: {fileID: 11400000, guid: 4b7b499cdec587e41abff74ecad05a6b, type: 2}
+    - target: {fileID: 1083529275, guid: 5ffbb81958eaffa43baa8f70647b6314, type: 3}
+      propertyPath: levelObjectives.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1083529275, guid: 5ffbb81958eaffa43baa8f70647b6314, type: 3}
+      propertyPath: levelObjectives.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: a1230fa5cd261ec4bbf283a3f7f1dc2a, type: 2}
+    - target: {fileID: 1083529275, guid: 5ffbb81958eaffa43baa8f70647b6314, type: 3}
+      propertyPath: levelObjectives.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: c2beeccac2f2d4848a5b9ec1eec43c20, type: 2}
+    - target: {fileID: 1083529275, guid: 5ffbb81958eaffa43baa8f70647b6314, type: 3}
+      propertyPath: levelObjectives.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 79b7758c848ab58468ceee18788fade0, type: 2}
+    - target: {fileID: 1083529275, guid: 5ffbb81958eaffa43baa8f70647b6314, type: 3}
+      propertyPath: levelObjectives.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: a06581b08fb2d7e4b8affcea3350b8f1, type: 2}
+    - target: {fileID: 1083529275, guid: 5ffbb81958eaffa43baa8f70647b6314, type: 3}
+      propertyPath: levelObjectives.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 53229fbc1f8886e409175e6896668b1e, type: 2}
     - target: {fileID: 7687301223400442902, guid: 5ffbb81958eaffa43baa8f70647b6314, type: 3}
       propertyPath: m_Name
       value: InventoryCanvas
@@ -6671,6 +6699,10 @@ PrefabInstance:
       propertyPath: npcEvents.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 2f01f4022e9db404fbe5262256b91acb, type: 2}
+    - target: {fileID: 1838050070, guid: 0f584a0fb0be1c34c812630348c9001d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2798674181236281255, guid: 0f584a0fb0be1c34c812630348c9001d, type: 3}
       propertyPath: m_Name
       value: NPC_Scientist
@@ -7530,9 +7562,9 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 283.74, y: 1}
+  m_Size: {x: 2.14, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &2005087970
 SpriteRenderer:

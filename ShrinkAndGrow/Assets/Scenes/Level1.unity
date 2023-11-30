@@ -3064,7 +3064,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 34.63, y: 1}
+  m_Size: {x: 2.03, y: 1}
   m_EdgeRadius: 0
 --- !u!1001 &575868366
 PrefabInstance:
@@ -11484,6 +11484,26 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 398933997}
     m_Modifications:
+    - target: {fileID: 1083529275, guid: 5ffbb81958eaffa43baa8f70647b6314, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 398933998}
+    - target: {fileID: 1083529275, guid: 5ffbb81958eaffa43baa8f70647b6314, type: 3}
+      propertyPath: goBackObjective
+      value: 
+      objectReference: {fileID: 11400000, guid: e97443592bcdbdf4d86b9cfc5a47d0ab, type: 2}
+    - target: {fileID: 1083529275, guid: 5ffbb81958eaffa43baa8f70647b6314, type: 3}
+      propertyPath: initialObjective
+      value: 
+      objectReference: {fileID: 11400000, guid: 65e97a790627b2d4eaac9c6da5000bad, type: 2}
+    - target: {fileID: 1083529275, guid: 5ffbb81958eaffa43baa8f70647b6314, type: 3}
+      propertyPath: levelObjectives.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1083529275, guid: 5ffbb81958eaffa43baa8f70647b6314, type: 3}
+      propertyPath: levelObjectives.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: e97443592bcdbdf4d86b9cfc5a47d0ab, type: 2}
     - target: {fileID: 7687301223400442902, guid: 5ffbb81958eaffa43baa8f70647b6314, type: 3}
       propertyPath: m_Name
       value: InventoryCanvas

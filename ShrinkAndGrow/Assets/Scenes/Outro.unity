@@ -3768,6 +3768,18 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1654611695}
     m_Modifications:
+    - target: {fileID: 1083529275, guid: 5ffbb81958eaffa43baa8f70647b6314, type: 3}
+      propertyPath: initialObjective
+      value: 
+      objectReference: {fileID: 11400000, guid: 9e757be7d601b6845953b63ea6d4a711, type: 2}
+    - target: {fileID: 1083529275, guid: 5ffbb81958eaffa43baa8f70647b6314, type: 3}
+      propertyPath: levelObjectives.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1083529275, guid: 5ffbb81958eaffa43baa8f70647b6314, type: 3}
+      propertyPath: levelObjectives.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 03754130462999d4fbb60c356291ec47, type: 2}
     - target: {fileID: 7687301223400442902, guid: 5ffbb81958eaffa43baa8f70647b6314, type: 3}
       propertyPath: m_Name
       value: InventoryCanvas
@@ -8365,9 +8377,9 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 283.74, y: 1}
+  m_Size: {x: 2.24, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &2005087970
 SpriteRenderer:
