@@ -2272,7 +2272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelEntryPoints:
   - entryPoint: {fileID: 699239429}
-    previousScene: Outro
+    previousScene: Intro
   - entryPoint: {fileID: 1289140117}
     previousScene: House_A
   - entryPoint: {fileID: 772205315}
@@ -2282,12 +2282,7 @@ MonoBehaviour:
   character: {fileID: 660337386480242288}
   maxGrowthLevel: 1
   minGrowthLevel: -1
-  allDialogueSOs: []
-  allNPCEventSOs:
-  - {fileID: 11400000, guid: affba5e78e265604f986cb726b67578d, type: 2}
   npc: {fileID: 1654616416}
-  initiallyClosedElements: {fileID: 0}
-  initiallyOpenElements: {fileID: 0}
   isMainLevel: 1
 --- !u!95 &398933999
 Animator:

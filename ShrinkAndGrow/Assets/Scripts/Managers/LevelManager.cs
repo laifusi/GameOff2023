@@ -7,8 +7,6 @@ public class LevelManager : MonoBehaviour
     [SerializeField] Transform character;
     [SerializeField] int maxGrowthLevel = 1;
     [SerializeField] int minGrowthLevel = -1;
-    [SerializeField] DialogueSO[] allDialogueSOs;
-    [SerializeField] NPCEvent[] allNPCEventSOs;
     [SerializeField] GameObject npc;
     [SerializeField] bool isMainLevel;
 
@@ -43,18 +41,6 @@ public class LevelManager : MonoBehaviour
                 character.position = entryPoint.GetEntryPoint();
                 return;
             }
-        }
-
-        // If no entry point, we are testing through the editor, should be a new game
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetInt("GrowthValue", -1);
-        foreach (DialogueSO dialogueSO in allDialogueSOs)
-        {
-            dialogueSO.Restart();
-        }
-        foreach(NPCEvent npcEventSO in allNPCEventSOs)
-        {
-            npcEventSO.Restart();
         }
     }
 

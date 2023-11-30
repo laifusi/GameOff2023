@@ -66,6 +66,7 @@ public class Door : MonoBehaviour
     {
         activeDoor = false;
         enterDoorUI.SetActive(false);
-        cantEnterDoorUI.SetActive(false);
+        if(cantEnterDoorUI != null)
+            cantEnterDoorUI.SetActive(false);
     }
 }

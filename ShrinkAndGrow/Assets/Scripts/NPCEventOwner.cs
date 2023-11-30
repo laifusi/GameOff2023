@@ -123,7 +123,6 @@ public class NPCEventOwner : MonoBehaviour
         for (int i = 0; i < npcEvents.Length; i++)
         {
             NPCEvent npcEvent = npcEvents[i];
-            Debug.Log(npcEvent);
             if (!npcEvent.DoneEvent)
             {
                 if (npcEvent.EventTrigger == EventTrigger.WalkEnding)
