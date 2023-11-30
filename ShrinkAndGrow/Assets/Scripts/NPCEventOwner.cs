@@ -42,7 +42,8 @@ public class NPCEventOwner : MonoBehaviour
                         switch(npcEvent.DependencyType)
                         {
                             case DependencyType.None:
-                                PlayDialogueEvent(npcEvent);
+                                if(!npcEvent.StartedEvent)
+                                    PlayDialogueEvent(npcEvent);
                                 return;
                             case DependencyType.Dialogue:
                                 if (npcEvent.DependencyEvent.DoneEvent)
@@ -132,7 +133,7 @@ public class NPCEventOwner : MonoBehaviour
                     switch (npcEvent.DependencyType)
                     {
                         case DependencyType.Walk:
-                            if (npcEvent.DependencyEvent.DoneEvent)
+                            if (npcEvent.DependencyEvent.DoneEvent && !npcEvent.StartedEvent)
                             {
                                 PlayDialogueEvent(npcEvent);
                             }
@@ -145,6 +146,7 @@ public class NPCEventOwner : MonoBehaviour
 
     private void PlayDialogueEvent(NPCEvent npcEvent)
     {
+        npcEvent.StartEvent();
         foreach(EventActions action in npcEvent.EventActions)
         {
             switch(action.ActionType)

@@ -24,6 +24,10 @@ public class LevelManager : MonoBehaviour
         character.GetComponent<CharacterMovement>().SetGrowthLevelLimits(minGrowthLevel, maxGrowthLevel);
 
         string previousLevel = PlayerPrefs.GetString("PreviousScene");
+        if(previousLevel == "Menu")
+        {
+            character.GetComponent<CharacterInventory>().Restart();
+        }
         if(npc != null)
             npc.SetActive(previousLevel == "Intro" || previousLevel == "Level1");
         if((isMainLevel && previousLevel == "Intro") || !isMainLevel)

@@ -25,7 +25,6 @@ public class GameInitializer : MonoBehaviour
             objectiveSO.Restart();
         }
 
-        if(CharacterInventory.Instance != null)
-            CharacterInventory.Instance.Restart();
+        PlayerPrefs.SetString("PreviousScene", MenuManager.Instance.GetSceneName());
     }
 }

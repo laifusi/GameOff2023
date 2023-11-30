@@ -11,6 +11,7 @@ public class NPCEvent : ScriptableObject
     [SerializeField] EventActions[] actions;
 
     private bool doneEvent;
+    private bool started;
 
     public DialogueSO Dialogue => dialogue;
     public EventTrigger EventTrigger => eventTrigger;
@@ -18,15 +19,23 @@ public class NPCEvent : ScriptableObject
     public NPCEvent DependencyEvent => dependencyEvent;
     public EventActions[] EventActions => actions;
     public bool DoneEvent => doneEvent;
+    public bool StartedEvent => started;
 
     public void Restart()
     {
         doneEvent = false;
+        started = false;
     }
 
     public void FinishEvent()
     {
+        started = false;
         doneEvent = true;
+    }
+
+    public void StartEvent()
+    {
+        started = true;
     }
 }
 

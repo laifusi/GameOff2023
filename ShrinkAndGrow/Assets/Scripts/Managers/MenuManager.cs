@@ -9,7 +9,7 @@ public class MenuManager : MonoBehaviour
 
     public static Action OnSceneFadeOut;
 
-    private void Start()
+    private void Awake()
     {
         if(Instance == null)
         {
