@@ -44,6 +44,7 @@ public class Door : MonoBehaviour
         {
             if(character.GetCurrentGrowthLevel() <= maxGrowthToEnter)
             {
+                GetComponent<SoundEffectDetonator>().PlayClip(0);
                 if (needsKey)
                 {
                     MenuManager.Instance.LoadSceneByName(houseScene);

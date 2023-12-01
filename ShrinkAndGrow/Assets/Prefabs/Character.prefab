@@ -216,6 +216,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   secondsToWait: 0.05
+  footsteps:
+  - {fileID: 8300000, guid: 22b5b26c3429f42c482afafb562afc2a, type: 3}
+  - {fileID: 8300000, guid: a948133482bd9461cbcb85c1b36c59b7, type: 3}
+  - {fileID: 8300000, guid: 8033517be0e2b4a939b3f8ffacc6f4d5, type: 3}
+  - {fileID: 8300000, guid: f65c4ff197551410b9f70b804410c961, type: 3}
+  - {fileID: 8300000, guid: 8148972f644724dc6ab272a4f7e24faa, type: 3}
+  - {fileID: 8300000, guid: a476e34385a8f43f5a7cd7280badc54f, type: 3}
+  jumps:
+  - {fileID: 8300000, guid: d2e675d6622d24295abe6c09d92ecf38, type: 3}
+  - {fileID: 8300000, guid: 99ce5cbfa1a894627b79ea51f715bfc3, type: 3}
+  - {fileID: 8300000, guid: 882f9a1159db645c9ab9fc85bfd3af04, type: 3}
+  landings:
+  - {fileID: 8300000, guid: 668f75fef58a0430dabdfe9483e50836, type: 3}
+  - {fileID: 8300000, guid: e3285200501f84c55a648a8b8862b722, type: 3}
+  - {fileID: 8300000, guid: 5962ff39f05d14bbb89f47abc42131b3, type: 3}
+  timeBetweenSteps: 0.5
 --- !u!114 &660337386770067138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +244,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1068d774f10cc4d89e73c9196b2a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  diamondPickUp: {fileID: 8300000, guid: f013f72a6c98703448414742ca35e348, type: 3}
+  keyPickUp: {fileID: 8300000, guid: f013f72a6c98703448414742ca35e348, type: 3}
+  orangePickUp: {fileID: 8300000, guid: f013f72a6c98703448414742ca35e348, type: 3}
+  potionPickUp: {fileID: 8300000, guid: f013f72a6c98703448414742ca35e348, type: 3}
+  orangeUsage: {fileID: 8300000, guid: c796ae9ec29092e46bbb6feaecec0b0e, type: 3}
+  potionUsage: {fileID: 8300000, guid: 1c4d3b194e927354eb5a39443f90957f, type: 3}
 --- !u!95 &660337386770067136
 Animator:
   serializedVersion: 4

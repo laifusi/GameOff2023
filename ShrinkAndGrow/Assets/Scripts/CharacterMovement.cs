@@ -11,10 +11,17 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] Transform feet;
     [SerializeField] LayerMask layerMask;
     [SerializeField] float secondsToWait;
+    [Header("Sound Effects")]
+    [SerializeField] AudioClip[] footsteps;
+    [SerializeField] AudioClip[] jumps;
+    [SerializeField] AudioClip[] landings;
+    [SerializeField] float timeBetweenSteps = 0.5f;
 
     private float horizontal;
     private bool mustJump;
     private bool isGrounded;
+    private bool wasGrounded = true;
+    private float timeSinceLastFootstep;
 
     private Rigidbody2D rb;
     private CharacterInventory inventory;
@@ -59,12 +66,22 @@ public class CharacterMovement : MonoBehaviour
     {
         var hit = Physics2D.OverlapCircle(feet.position, 0.1f, layerMask);
         isGrounded = hit != null;
+        if(!wasGrounded && isGrounded)
+            PlayClip(ChooseClip(landings));
+        wasGrounded = isGrounded;
         animator.SetBool("grounded", isGrounded);
+        timeSinceLastFootstep += Time.deltaTime;
 
         horizontal = Input.GetAxis("Horizontal");
         animator.SetBool("isWalking", horizontal != 0);
         if (horizontal != 0)
         {
+            if (timeSinceLastFootstep > timeBetweenSteps && isGrounded)
+            {
+                PlayClip(ChooseClip(footsteps));
+                timeSinceLastFootstep = 0;
+            }
+
             spriteRenderer.flipX = horizontal < 0;
             newColOffsetX = horizontal < 0 ? -initialColOffsetX : initialColOffsetX;
             if(newColOffsetX != col2D.offset.x)
@@ -75,6 +92,7 @@ public class CharacterMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
+            PlayClip(ChooseClip(jumps));
             mustJump = true;
             animator.SetTrigger("Jump");
         }
@@ -183,6 +201,17 @@ public class CharacterMovement : MonoBehaviour
     public int GetCurrentGrowthLevel()
     {
         return growthValue;
+    }
+
+    private AudioClip ChooseClip(AudioClip[] possibleClips)
+    {
+        int randomId = UnityEngine.Random.Range(0, possibleClips.Length);
+        return possibleClips[randomId];
+    }
+
+    private void PlayClip(AudioClip clip)
+    {
+        SoundEffectManager.Instance.PlayClip(clip);
     }
 
     private void OnDisable()

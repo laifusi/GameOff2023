@@ -9,6 +9,8 @@ public class MenuManager : MonoBehaviour
 
     public static Action OnSceneFadeOut;
 
+    [SerializeField] AudioClip soundToWaitFor;
+
     private void Awake()
     {
         if(Instance == null)
@@ -18,18 +20,25 @@ public class MenuManager : MonoBehaviour
         }
         else
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 
     public void Menu()
     {
-        SceneManager.LoadScene(0);
+        StartCoroutine(LoadById(0));
+        //SceneManager.LoadScene(0);
     }
 
     public void LoadSceneByID(int buildID)
     {
-        SceneManager.LoadScene(buildID);
+        StartCoroutine(LoadById(buildID));
+    }
+
+    private IEnumerator LoadById(int buildId)
+    {
+        yield return new WaitForSeconds(soundToWaitFor.length/2);
+        SceneManager.LoadScene(buildId);
     }
 
     public void LoadSceneByName(string sceneName)
@@ -51,6 +60,12 @@ public class MenuManager : MonoBehaviour
 
     public void Exit()
     {
+        StartCoroutine(ExitGame());
+    }
+
+    private IEnumerator ExitGame()
+    {
+        yield return new WaitForSeconds(soundToWaitFor.length/2);
         Application.Quit();
     }
 }

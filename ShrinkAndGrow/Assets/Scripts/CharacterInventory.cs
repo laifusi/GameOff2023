@@ -18,6 +18,13 @@ public class CharacterInventory : MonoBehaviour
     public static Action OnDiamondUpdated;
     public static Action OnDiamondRemoved;
 
+    [SerializeField] AudioClip diamondPickUp;
+    [SerializeField] AudioClip keyPickUp;
+    [SerializeField] AudioClip orangePickUp;
+    [SerializeField] AudioClip potionPickUp;
+    [SerializeField] AudioClip orangeUsage;
+    [SerializeField] AudioClip potionUsage;
+
     private void Awake()
     {
         if (Instance == null)
@@ -52,12 +59,14 @@ public class CharacterInventory : MonoBehaviour
 
     public void AddPotion()
     {
+        PlayClip(potionPickUp);
         potions++;
         OnPotionsUpdated?.Invoke(potions);
     }
 
     public void DrinkPotion()
     {
+        PlayClip(potionUsage);
         potions--;
         OnPotionsUpdated?.Invoke(potions);
     }
@@ -69,12 +78,14 @@ public class CharacterInventory : MonoBehaviour
 
     public void AddOrange()
     {
+        PlayClip(orangePickUp);
         oranges++;
         OnOrangesUpdated?.Invoke(oranges);
     }
 
     public void EatOrange()
     {
+        PlayClip(orangeUsage);
         oranges--;
         OnOrangesUpdated?.Invoke(oranges);
     }
@@ -86,6 +97,7 @@ public class CharacterInventory : MonoBehaviour
 
     public void AddKey(KeyType keyType)
     {
+        PlayClip(keyPickUp);
         keys.Add(keyType);
         OnKeysUpdated?.Invoke(keyType);
     }
@@ -97,6 +109,7 @@ public class CharacterInventory : MonoBehaviour
 
     public void AddDiamond()
     {
+        PlayClip(diamondPickUp);
         diamond = true;
         OnDiamondUpdated?.Invoke();
     }
@@ -118,6 +131,11 @@ public class CharacterInventory : MonoBehaviour
         oranges = 0;
         keys.Clear();
         diamond = false;
+    }
+
+    private void PlayClip(AudioClip clip)
+    {
+        SoundEffectManager.Instance.PlayClip(clip);
     }
 }
 

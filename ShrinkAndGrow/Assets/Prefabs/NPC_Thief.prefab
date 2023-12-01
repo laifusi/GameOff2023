@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1175937058}
   - component: {fileID: 1175937055}
   - component: {fileID: 1175937056}
+  - component: {fileID: 4376015866550759581}
   m_Layer: 0
   m_Name: NPC_Thief
   m_TagString: Untagged
@@ -209,6 +210,23 @@ MonoBehaviour:
   walkSpeed: 11
   distanceThreshold: 1.5
   shouldStartActive: 0
+  startOnIdle: 1
+--- !u!114 &4376015866550759581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776491953668916882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fcdc3ca7d4eb364b95c6b6e46898a1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip:
+  - {fileID: 8300000, guid: 8033517be0e2b4a939b3f8ffacc6f4d5, type: 3}
+  - {fileID: 8300000, guid: 1c4d3b194e927354eb5a39443f90957f, type: 3}
+  - {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
 --- !u!1 &3665164467525690349
 GameObject:
   m_ObjectHideFlags: 0

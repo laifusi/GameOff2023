@@ -18,6 +18,7 @@ public class ExitDoor : MonoBehaviour
             {
                 doorImage.SetActive(false);
                 tunnelImage.SetActive(true);
+                GetComponent<SoundEffectDetonator>().PlayClip(0);
                 Destroy(gameObject);
             }
             else if(needsDiamond)
